@@ -1,13 +1,16 @@
 import React from 'react'
-import { BrowserRouter, Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Items from './pages/Items'
+import Users from './pages/Users'
 
 const Routes = () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/items" exact component={Items} />
+            <Route path="/users" exact component={Users} />
+        </Switch>
     )
 }
 

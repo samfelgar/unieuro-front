@@ -14,11 +14,8 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { mainListItems } from './listItems';
-import { BrowserRouter, Switch, Route, Link as RouterLink } from 'react-router-dom'
-import Home from '../Home'
-import Users from '../Users'
-import Items from '../Items'
+import MainListItems from './MainListItems';
+import Routes from '../../routes'
 
 const drawerWidth = 240;
 
@@ -159,18 +156,16 @@ export default function Dashboard() {
         </div>
         <Divider />
 
-        <List>{mainListItems}</List>
+        <List>
+          <MainListItems />
+        </List>
       </Drawer>
 
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/items" exact component={Items} />
-              <Route path="/users" exact component={Users} />
-            </Switch>
+            <Routes />
           </Grid>
         </Container>
       </main>
