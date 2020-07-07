@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Container from '@material-ui/core/Container';
 import TableContainer from '@material-ui/core/TableContainer'
 import Table from '@material-ui/core/Table'
@@ -17,12 +17,16 @@ import api from '../../services/api'
 const Items = () => {
 
     const [ items, setItems ] = useState([])
+    const [ errorMessage, setErrorMessage ] = useState('')
     const history = useHistory()
 
     useEffect(() => {
         api.get('/items')
             .then(response => {
                 setItems(response.data)
+            })
+            .catch(error => {
+                setErrorMessage(error)
             })
     }, [])
 
