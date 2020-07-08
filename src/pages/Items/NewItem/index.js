@@ -6,12 +6,8 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Paper from "@material-ui/core/Paper";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import MuiAlert from '@material-ui/lab/Alert'
-import Snackbar from '@material-ui/core/Snackbar'
+import ErrorMessageDialog from '../../../components/ErrorMessageDialog'
+import SnackAlert from '../../../components/SnackAlert'
 import api from '../../../services/api'
 
 const useStyles = makeStyles((theme) => ({
@@ -28,26 +24,6 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
     },
 }));
-
-const ErrorMessageDialog = ({ toggle, errors, handleClose }) => {
-    return (
-        <Dialog open={toggle} onClose={handleClose}>
-            <DialogTitle>Erro!</DialogTitle>
-            <DialogContent>
-                <DialogContentText>Foram encontrados os seguintes erros:</DialogContentText>
-                {errors.map((error, index) => (
-                    <DialogContentText key={index} style={{ color: 'red' }}>
-                        {error}
-                    </DialogContentText>
-                ))}
-            </DialogContent>
-        </Dialog>
-    )
-}
-
-const Alert = (props) => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 const NewItem = () => {
     const history = useHistory();
@@ -175,9 +151,7 @@ const NewItem = () => {
                 </form>
             </Paper>
             <ErrorMessageDialog toggle={error} handleClose={handleCloseDialog} errors={errorMessages} />
-            <Snackbar open={openSnack} autoHideDuration={3000} onClose={handleCloseSnackBar}>
-                    <Alert severity={severity}>{snackMessage}</Alert>
-            </Snackbar>
+            <SnackAlert openSnack={openSnack} onClose={handleCloseSnackBar} severity={severity} snackMessage={snackMessage} />
         </Container>
     );
 };
