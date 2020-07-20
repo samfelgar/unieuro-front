@@ -7,9 +7,9 @@ import EditItem from './pages/Items/EditItem'
 import Users from './pages/Users'
 import ListOrders from './pages/Orders/ListOrders'
 import NewOrder from './pages/Orders/NewOrder'
-import NewProfile from './pages/Profiles/NewProfile'
-import Profile from './pages/Profiles'
-import EditProfile from './pages/Profiles/EditProfile'
+import NewRole from './pages/Roles/NewRole'
+import Roles from './pages/Roles'
+import EditRole from './pages/Roles/EditRole'
 
 const Routes = () => {
     return (
@@ -35,9 +35,9 @@ const Routes = () => {
             <Route path="/orders" exact>
                 <ListOrders />
             </Route>
-            <Route path="/profiles/edit/:id" exact component={EditProfile} />
-            <Route path="/profiles/new" exact component={NewProfile} />
-            <Route path="/profiles" exact component={Profile} />
+            <Route path="/roles/edit/:id" exact component={EditRole} />
+            <Route path="/roles/new" exact component={NewRole} />
+            <Route path="/roles" exact component={Roles} />
             <Route>
                 <h1>Página não encontrada</h1>
             </Route>

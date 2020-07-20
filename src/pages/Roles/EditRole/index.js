@@ -25,14 +25,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const EditProfile = () => {
+const EditRole = () => {
 
     const history = useHistory()
     const { id } = useParams()
     const classes = useStyles()
-    const [profile, setProfile] = useState({
+    const [role, setRole] = useState({
         id: 0,
-        name: ''
+        description: ''
     })
     const [openSnack, setOpenSnack] = useState(false)
     const [severity, setSeverity] = useState('')
@@ -41,9 +41,9 @@ const EditProfile = () => {
     const [errorMessages, setErrorMessages] = useState([])
 
     useEffect(() => {
-        api.get(`profiles/${id}`)
+        api.get(`roles/${id}`)
             .then(response => {
-                setProfile(profile => setProfile(response.data))
+                setRole(role => setRole(response.data))
             })
     }, [id])
     
@@ -56,7 +56,7 @@ const EditProfile = () => {
     const handleSubmit = event => {
         event.preventDefault()
         let returnFlag = false
-        if (!profile.name) {
+        if (!role.description) {
             setErrorMessages(errorMessages => errorMessages.concat("O campo nome deve estar preenchido."));
             returnFlag = true
         }
@@ -64,10 +64,10 @@ const EditProfile = () => {
             return
         }
 
-        api.put(`profiles/${profile.id}`, profile)
+        api.put(`roles/${role.id}`, role)
             .then(response => {
                 setSeverity('success')
-                setSnackMessage(`O Perfil "${response.data.name}" foi salvo com sucesso!`)
+                setSnackMessage(`O Perfil "${response.data.description}" foi salvo com sucesso!`)
                 setOpenSnack(true)
             })
             .catch(error => {
@@ -96,10 +96,10 @@ const EditProfile = () => {
                 <form className={classes.root} onSubmit={handleSubmit}>
                     <TextField
                         label="Nome"
-                        value={profile.name}
-                        onChange={(event) => setProfile({
-                            ...profile,
-                            name: event.target.value
+                        value={role.description}
+                        onChange={(event) => setRole({
+                            ...role,
+                            description: event.target.value
                         })}
                         required
                     />
@@ -130,4 +130,4 @@ const EditProfile = () => {
     );
 }
 
-export default EditProfile;
+export default EditRole;
