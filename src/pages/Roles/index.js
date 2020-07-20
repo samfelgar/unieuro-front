@@ -117,7 +117,7 @@ const Roles = () => {
                                     variant="contained"
                                     color="primary"
                                     startIcon={<EditIcon />}
-                                    onClick={() => { history.push('/roles/edit/' + roles.id) }}
+                                    onClick={() => { history.push('/roles/edit/' + role.id) }}
                                     size="small"
                                     style={{ marginRight: 5 }}
                                 >
