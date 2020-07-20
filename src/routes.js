@@ -14,16 +14,33 @@ import EditProfile from './pages/Profiles/EditProfile'
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/items" exact component={Items} />
-            <Route path="/items/new" exact component={NewItem} />
-            <Route path="/items/edit/:id" exact component={EditItem} />
-            <Route path="/users" exact component={Users} />
-            <Route path="/orders" exact component={ListOrders} />
-            <Route path="/orders/new" exact component={NewOrder} />
-            <Route path="/profiles" exact component={Profile} />
-            <Route path="/profiles/new" exact component={NewProfile} />
+            <Route path="/" exact>
+                <Home />
+            </Route>
+            <Route path="/items/edit/:id" exact>
+                <EditItem />
+            </Route>
+            <Route path="/items/new" exact>
+                <NewItem />
+            </Route>
+            <Route path="/items" exact>
+                <Items />
+            </Route>
+            <Route path="/users" exact>
+                <Users />
+            </Route>
+            <Route path="/orders/new">
+                <NewOrder />
+            </Route>
+            <Route path="/orders" exact>
+                <ListOrders />
+            </Route>
             <Route path="/profiles/edit/:id" exact component={EditProfile} />
+            <Route path="/profiles/new" exact component={NewProfile} />
+            <Route path="/profiles" exact component={Profile} />
+            <Route>
+                <h1>Página não encontrada</h1>
+            </Route>
         </Switch>
     )
 }

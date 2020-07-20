@@ -49,7 +49,8 @@ const ListOrders = () => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Data/Hora</TableCell>
+                            <TableCell>Data de criação</TableCell>
+                            <TableCell>Data de entrega</TableCell>
                             <TableCell>Status</TableCell>
                             <TableCell>
                                 
@@ -63,6 +64,11 @@ const ListOrders = () => {
                                     {new Date(order.created_at).getDate()}/
                                     {new Date(order.created_at).getMonth() + 1}/
                                     {new Date(order.created_at).getFullYear()}
+                                </TableCell>
+                                <TableCell>
+                                    {new Date(order.due_date).getDate()}/
+                                    {new Date(order.due_date).getMonth() + 1}/
+                                    {new Date(order.due_date).getFullYear()}
                                 </TableCell>
                                 <TableCell>
                                     {order.status ? "A liberar" : "Liberada"}

@@ -6,16 +6,24 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 import Paper from "@material-ui/core/Paper";
-import ErrorMessageDialog from '../../../components/ErrorMessageDialog'
-import SnackAlert from '../../../components/SnackAlert'
-import api from '../../../services/api'
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import ptBRLocale from "date-fns/locale/pt-BR";
+import ErrorMessageDialog from "../../../components/ErrorMessageDialog";
+import SnackAlert from "../../../components/SnackAlert";
+import api from "../../../services/api";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         "& > *": {
             margin: theme.spacing(1),
-            width: "40ch",
         },
+    },
+    formHeader: {
+        paddingTop: 10,
     },
     buttons: {
         "& > *": {
@@ -29,78 +37,108 @@ const NewItem = () => {
     const history = useHistory();
     const classes = useStyles();
 
+    // Item fields
     const [name, setName] = useState("");
+    const [brand, setBrand] = useState("");
+    const [unit, setUnit] = useState("");
+
+    // Lot fields
+    const [lotDescription, setLotDescription] = useState("");
+    const [expiration, setExpiration] = useState(null);
     const [qtd, setQtd] = useState(1);
-    const [unity, setUnity] = useState("");
-    const [error, setError] = useState(false)
-    const [errorMessages, setErrorMessages] = useState([])
-    const [openSnack, setOpenSnack] = useState(false)
-    const [severity, setSeverity] = useState('')
-    const [snackMessage, setSnackMessage] = useState('')
+
+    // Feedback
+    const [error, setError] = useState(false);
+    const [errorMessages, setErrorMessages] = useState([]);
+    const [openSnack, setOpenSnack] = useState(false);
+    const [severity, setSeverity] = useState("");
+    const [snackMessage, setSnackMessage] = useState("");
 
     const unities = ["ML", "L", "UN", "G", "KG", "M", "CM", "MOL"];
 
     useEffect(() => {
         if (errorMessages.length > 0) {
-            setError(true)
+            setError(true);
         }
-    }, [errorMessages])
-    
+    }, [errorMessages]);
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = {
             name,
-            qtd,
-            unity,
+            brand,
+            unit,
+            lot: {
+                description: lotDescription,
+                expiration,
+                qtd,
+            } 
         };
 
-        let returnFlag = false
+        let returnFlag = false;
         if (!data.name) {
-            setErrorMessages(errorMessages => errorMessages.concat("O campo nome deve estar preenchido."));
-            returnFlag = true
+            setErrorMessages((errorMessages) =>
+                errorMessages.concat("O campo nome deve estar preenchido.")
+            );
+            returnFlag = true;
         }
-        if (data.qtd <= 0) {
-            setErrorMessages(errorMessages => errorMessages.concat("O campo quantidade deve ser maior que zero."));
-            returnFlag = true
+        if (!data.brand) {
+            setErrorMessages((errorMessages) =>
+                errorMessages.concat("O campo marca deve estar preenchido.")
+            );
+            returnFlag = true;
         }
-        if (!data.unity) {
-            setErrorMessages(errorMessages => errorMessages.concat("Selecione uma unidade."));
-            returnFlag = true
+        if (data.lot.qtd <= 0) {
+            setErrorMessages((errorMessages) =>
+                errorMessages.concat(
+                    "O campo quantidade deve ser maior que zero."
+                )
+            );
+            returnFlag = true;
+        }
+        if (!data.unit) {
+            setErrorMessages((errorMessages) =>
+                errorMessages.concat("Selecione uma unidade.")
+            );
+            returnFlag = true;
         }
         if (returnFlag) {
-            return
+            return;
         }
 
-        api.post('/items', data)
-            .then(response => {
-                setSeverity('success')
-                setSnackMessage(`O item "${response.data.name}" foi criado com sucesso!`)
-                setOpenSnack(true)
+        api.post("/items", data)
+            .then((response) => {
+                setSeverity("success");
+                setSnackMessage(
+                    `O item "${response.data.name}" foi criado com sucesso!`
+                );
+                setOpenSnack(true);
             })
-            .catch(error => {
-                setSeverity('error')
-                setSnackMessage('Ocorreu um erro em sua solicitação.')
-                setOpenSnack(true)
-            })
+            .catch((error) => {
+                setSeverity("error");
+                setSnackMessage("Ocorreu um erro em sua solicitação.");
+                setOpenSnack(true);
+            });
     };
 
     const handleCloseDialog = () => {
-        setError(false)
-        setErrorMessages([])
-    }
+        setError(false);
+        setErrorMessages([]);
+    };
 
     const handleCloseSnackBar = () => {
-        if (severity === 'success') {
-            history.goBack()
+        if (severity === "success") {
+            history.goBack();
         }
-        setOpenSnack(false)
-    }
+        setOpenSnack(false);
+    };
 
     return (
         <Container>
             <h1>Novo item</h1>
-            <Paper>
-                <form className={classes.root} onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
+                <Paper className={classes.root}>
+                    <h3 className={classes.formHeader}>Dados do item</h3>
                     <TextField
                         label="Nome"
                         value={name}
@@ -108,19 +146,18 @@ const NewItem = () => {
                         required
                     />
                     <TextField
-                        label="Quantidade"
-                        value={qtd}
-                        onChange={(event) => setQtd(event.target.value)}
-                        type="number"
-                        inputProps={{ min: 1, step: 0.1 }}
+                        label="Marca"
+                        value={brand}
+                        onChange={(event) => setBrand(event.target.value)}
                         required
                     />
                     <TextField
-                        id="unity-label"
+                        id="unit-label"
                         select
                         label="Unidade"
-                        value={unity}
-                        onChange={(event) => setUnity(event.target.value)}
+                        value={unit}
+                        onChange={(event) => setUnit(event.target.value)}
+                        style={{ width: "20ch" }}
                         required
                     >
                         {unities.map((un) => (
@@ -129,6 +166,34 @@ const NewItem = () => {
                             </MenuItem>
                         ))}
                     </TextField>
+                    <h3 className={classes.formHeader}>Dados do lote</h3>
+                    <TextField
+                        label="Descrição do lote"
+                        value={lotDescription}
+                        onChange={(event) =>
+                            setLotDescription(event.target.value)
+                        }
+                    />
+                    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ptBRLocale}>
+                        <KeyboardDatePicker
+                            label="Validade"
+                            views={['month', 'year']}
+                            format="MM/yyyy"
+                            onChange={(date) => setExpiration(date)}
+                            value={expiration}
+                            variant="inline"
+                            disableToolbar
+                            autoOk
+                        />
+                    </MuiPickersUtilsProvider>
+                    <TextField
+                        label="Quantidade"
+                        value={qtd}
+                        onChange={(event) => setQtd(event.target.value)}
+                        type="number"
+                        inputProps={{ min: 1, step: 0.1 }}
+                        required
+                    />
                     <div className={classes.buttons}>
                         <Button
                             onClick={(event) => handleSubmit(event)}
@@ -148,10 +213,19 @@ const NewItem = () => {
                             Voltar
                         </Button>
                     </div>
-                </form>
-            </Paper>
-            <ErrorMessageDialog toggle={error} handleClose={handleCloseDialog} errors={errorMessages} />
-            <SnackAlert openSnack={openSnack} onClose={handleCloseSnackBar} severity={severity} snackMessage={snackMessage} />
+                </Paper>
+            </form>
+            <ErrorMessageDialog
+                toggle={error}
+                handleClose={handleCloseDialog}
+                errors={errorMessages}
+            />
+            <SnackAlert
+                openSnack={openSnack}
+                onClose={handleCloseSnackBar}
+                severity={severity}
+                snackMessage={snackMessage}
+            />
         </Container>
     );
 };
