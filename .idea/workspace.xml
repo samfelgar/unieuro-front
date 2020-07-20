@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:front" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/MainListItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/MainListItems.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1euaTSdp0su1tyR6aEXnALiNjuy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="" />
+      <created>1595173938347</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595173938347</updated>
+      <workItem from="1595173940258" duration="189000" />
+      <workItem from="1595174525888" duration="17637000" />
+      <workItem from="1595211096716" duration="9390000" />
+      <workItem from="1595274943403" duration="6003000" />
+    </task>
+    <task id="LOCAL-00001" summary="changes to comply with database">
+      <created>1595203956515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595203956515</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Authentication">
+      <created>1595276311368</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595276311368</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="front" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changes to comply with database" />
+    <MESSAGE value="Authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authentication" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595174636436">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595174636436" />
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595275113674">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
+    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595275113674">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
+    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595275113673">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113673" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595275113674">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
+    <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595200619758">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595200619758" />
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595276322828">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276322828" />
+    <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595183756244">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595183756244" />
+    <state x="731" y="446" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595217386918">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="731" y="446" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595217386918" />
+    <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog" timestamp="1595276776836">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276776836" />
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1595221449652">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595221449652" />
+  </component>
+</project>

@@ -8,9 +8,10 @@ function App() {
 
     const [loggedIn, setLoggedIn] = useState(sessionStorage.getItem('loggedIn') === 'true' || false)
 
-    const login = () => {
+    const login = (responseData) => {
         setLoggedIn(true)
         sessionStorage.setItem('loggedIn', true)
+        sessionStorage.setItem('userId', responseData.id)
     }
 
     const logout = () => {
@@ -18,7 +19,7 @@ function App() {
             .then(response => {
                 if (response.status === 204) {
                     setLoggedIn(false)
-                    sessionStorage.setItem('loggedIn', false)
+                    sessionStorage.clear()
                 }
             })
     }

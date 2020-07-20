@@ -3,13 +3,21 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import api from '../../services/api'
-import { useHistory } from 'react-router-dom'
+import SnackAlert from "../../components/SnackAlert";
+import {useHistory} from 'react-router-dom'
 
-const Login = ({ login }) => {
+const Login = ({login}) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
+
+    const [openSnack, setOpenSnack] = useState(false)
     const history = useHistory()
+
+    const handleCloseSnackbar = () => {
+        setOpenSnack(false)
+    }
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -21,10 +29,19 @@ const Login = ({ login }) => {
             .then(response => {
                 api.post('login', data)
                     .then(response => {
-                        login()
-                        history.push('/')
+                        if (!response.data.error) {
+                            login(response.data)
+                            history.push('/')
+                        }
                     })
-            })
+                    .catch(error => {
+                        setErrorMessage(error.response.data)
+                        setOpenSnack(true)
+                    })
+            }).catch(error => {
+            setErrorMessage(error.response.data)
+            setOpenSnack(true)
+        })
     }
 
     return (
@@ -52,6 +69,8 @@ const Login = ({ login }) => {
                         <Button variant="contained" color="primary" type="submit"
                                 style={{width: '100%'}}>Entrar</Button>
                     </div>
+                    <SnackAlert openSnack={openSnack} onClose={handleCloseSnackbar} severity="error"
+                                snackMessage={errorMessage.error}/>
                 </div>
             </div>
         </form>

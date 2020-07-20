@@ -37,8 +37,6 @@ const MainListItems = ({logout}) => {
             })
     }, [])
 
-
-
     return (
         <div>
             <ListItemLink primary="Início" to="/" icon={<HomeIcon/>}/>

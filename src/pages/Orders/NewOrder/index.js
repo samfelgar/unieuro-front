@@ -67,8 +67,9 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
 
     const handleSave = () => {
         try {
+            const currentUser = sessionStorage.getItem('userId')
             const data = {
-                'user_id': 2,
+                'user_id': currentUser,
                 'due_date': dueDate,
                 items
             }
@@ -77,7 +78,7 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                 throw 'Selecione uma data de entrega.'
             }
 
-            if (data.items.length < 1) {
+            if (data.items.length < 1 || data.items.length !== selectedItems.length) {
                 throw 'Você deve definir quantidades para os itens selecionados.'
             }
 
