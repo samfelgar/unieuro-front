@@ -26,10 +26,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const NewProfile = () => {
+const NewRole = () => {
     const history = useHistory()
     const classes = useStyles();
-    const [name, setName] = useState();
+    const [description, setDescription] = useState();
     const [error, setError] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
     const [openSnack, setOpenSnack] = useState(false);
@@ -45,10 +45,10 @@ const NewProfile = () => {
         const handleSubmit = (event) => {
             event.preventDefault();
             const data = {
-                name
+                description
             };
             let returnFlag = false
-            if (!data.name) {
+            if (!data.description) {
                 setErrorMessages(errorMessages => errorMessages.concat("O campo nome deve estar preenchido."));
                 returnFlag = true
             }
@@ -56,10 +56,10 @@ const NewProfile = () => {
                 return
             }
             console.log(data);
-            api.post('/profiles', data)
+            api.post('/roles', data)
                 .then(response => {
                     setSeverity('success')
-                    setSnackMessage(`O Perfil "${response.data.name}" foi criado com sucesso!`)
+                    setSnackMessage(`O Perfil "${response.data.description}" foi criado com sucesso!`)
                     setOpenSnack(true)
                 })
                 .catch(error => {
@@ -86,8 +86,8 @@ const NewProfile = () => {
             <form className={classes.root} onSubmit={handleSubmit}>
                 <TextField
                     label="Nome"
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    value={description}
+                    onChange={(event) => setDescription(event.target.value)}
                     required
                 />
             </form>
@@ -115,4 +115,4 @@ const NewProfile = () => {
         </Container>  
     );
 }
-export default NewProfile;
+export default NewRole;

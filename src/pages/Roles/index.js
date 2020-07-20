@@ -23,13 +23,13 @@ import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
 
-const Profiles = () => {
+const Roles = () => {
     const history = useHistory()
-    const [profiles, setProfiles] = useState([])
+    const [roles, setRoles] = useState([])
     const [severity, setSeverity] = useState('')
     const [feedbackMessage, setFeedbackMessage] = useState('')
     const [openSnack, setOpenSnack] = useState(false)
-    const [selectedProfiles, setSelectedProfiles] = useState(0)
+    const [selectedRoles, setSelectedRoles] = useState(0)
     const [openDialog, setOpenDialog] = useState(false)
 
     const useStyles = makeStyles({
@@ -46,13 +46,13 @@ const Profiles = () => {
         return { name };
     }
     useEffect(() => {
-        fetchProfiles()
+        fetchRoles()
     }, [])
 
-    const fetchProfiles = () => {
-        api.get('/profiles')
+    const fetchRoles = () => {
+        api.get('/roles')
             .then(response => {
-                setProfiles(response.data)
+                setRoles(response.data)
                 console.log(response.data);
             })
             .catch(error => {
@@ -71,9 +71,9 @@ const Profiles = () => {
 
     const handleDeleteButton = id => {
         console.log(id)
-        api.delete(`profiles/${id}`)
+        api.delete(`roles/${id}`)
             .then(response => {
-                fetchProfiles()
+                fetchRoles()
                 setOpenDialog(false)
                 setFeedbackMessage('O perfil foi excluído.')
                 setSeverity('success')
@@ -90,7 +90,7 @@ const Profiles = () => {
         <Container>
             <h1>Perfils</h1>
             <Button
-                onClick={() => { history.push('/profiles/new') }}
+                onClick={() => { history.push('/roles/new') }}
                 variant="contained"
                 color="primary"
                 startIcon={<AddCircleIcon />}
@@ -107,17 +107,17 @@ const Profiles = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {profiles.map((profile) => (
-                            <TableRow key={profile.id}>
+                        {roles.map((role) => (
+                            <TableRow key={role.id}>
                                 <TableCell component="th" scope="row">
-                                    {profile.name}
+                                    {role.description}
                                 </TableCell>
                                 <TableCell>
                                 <Button
                                     variant="contained"
                                     color="primary"
                                     startIcon={<EditIcon />}
-                                    onClick={() => { history.push('/profiles/edit/' + profile.id) }}
+                                    onClick={() => { history.push('/roles/edit/' + role.id) }}
                                     size="small"
                                     style={{ marginRight: 5 }}
                                 >
@@ -128,7 +128,7 @@ const Profiles = () => {
                                     color="secondary"
                                     startIcon={<DeleteIcon />}
                                     onClick={() => {
-                                        setSelectedProfiles(profile.id)
+                                        setSelectedRoles(role.id)
                                         setOpenDialog(true)
                                     }}
                                     size="small"
@@ -157,7 +157,7 @@ const Profiles = () => {
                     <Button onClick={handleDialogClose}>
                         Cancelar
                     </Button>
-                    <Button onClick={() => handleDeleteButton(selectedProfiles)} color="secondary">
+                    <Button onClick={() => handleDeleteButton(selectedRoles)} color="secondary">
                         Excluir
                     </Button>
                 </DialogActions>
@@ -166,4 +166,4 @@ const Profiles = () => {
     );
 }
 
-export default Profiles;
+export default Roles;
