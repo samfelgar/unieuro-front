@@ -10,6 +10,9 @@ import NewOrder from './pages/Orders/NewOrder'
 import NewRole from './pages/Roles/NewRole'
 import Roles from './pages/Roles'
 import EditRole from './pages/Roles/EditRole'
+import NewMenu from './pages/Menu/NewMenu'
+import EditMenu from './pages/Menu/EditMenu'
+import Menu from './pages/Menu'
 
 const Routes = () => {
     return (
@@ -35,9 +38,24 @@ const Routes = () => {
             <Route path="/orders" exact>
                 <ListOrders />
             </Route>
-            <Route path="/roles/edit/:id" exact component={EditRole} />
-            <Route path="/roles/new" exact component={NewRole} />
-            <Route path="/roles" exact component={Roles} />
+            <Route path="/roles/edit/:id" exact>
+                <EditRole />
+            </Route>
+            <Route path="/roles/new" exact>
+                <NewRole />
+            </Route>
+            <Route path="/roles/" exact>
+                <Roles />
+            </Route>
+            <Route path="/menu/new" exact>
+                <NewMenu />
+            </Route>
+            <Route path="/menu/" exact>
+                <Menu />
+            </Route>
+            <Route path="/menu/edit/:id" exact>
+                <EditMenu />
+            </Route>
             <Route>
                 <h1>Página não encontrada</h1>
             </Route>

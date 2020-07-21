@@ -25,14 +25,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const EditRole = () => {
+const EditMenu = () => {
 
     const history = useHistory()
     const { id } = useParams()
     const classes = useStyles()
-    const [role, setRole] = useState({
+    const [menu, setMenu] = useState({
         id: 0,
-        description: ''
+        name: '',
+        path: ''
     })
     const [openSnack, setOpenSnack] = useState(false)
     const [severity, setSeverity] = useState('')
@@ -41,9 +42,9 @@ const EditRole = () => {
     const [errorMessages, setErrorMessages] = useState([])
 
     useEffect(() => {
-        api.get(`roles/${id}`)
+        api.get(`menus/${id}`)
             .then(response => {
-                setRole(role => setRole(response.data))
+                setMenu(menu => setMenu(response.data))
             })
     }, [id])
     
@@ -56,18 +57,21 @@ const EditRole = () => {
     const handleSubmit = event => {
         event.preventDefault()
         let returnFlag = false
-        if (!role.description) {
+        if (!menu.name) {
             setErrorMessages(errorMessages => errorMessages.concat("O campo nome deve estar preenchido."));
+            returnFlag = true
+        }
+        if (!menu.path) {
+            setErrorMessages(errorMessages => errorMessages.concat("O campo 'Caminho' deve estar preenchido."));
             returnFlag = true
         }
         if (returnFlag) {
             return
         }
-        console.log(role.description)
-        api.put(`roles/${role.id}`, role)
+        api.put(`menus/${menu.id}`, menu)
             .then(response => {
                 setSeverity('success')
-                setSnackMessage(`O Perfil "${response.data.description}" foi salvo com sucesso!`)
+                setSnackMessage(`A opção "${response.data.name}" foi salvo com sucesso!`)
                 setOpenSnack(true)
             })
             .catch(error => {
@@ -91,15 +95,24 @@ const EditRole = () => {
 
     return (
         <Container>
-            <h1>Editar Perfil</h1>
+            <h1>Editar Opção Menu</h1>
             <Paper>
                 <form className={classes.root} onSubmit={handleSubmit}>
                     <TextField
                         label="Nome"
-                        value={role.description}
-                        onChange={(event) => setRole({
-                            ...role,
-                            description: event.target.value
+                        value={menu.name}
+                        onChange={(event) => setMenu({
+                            ...menu,
+                            name: event.target.value
+                        })}
+                        required
+                    />
+                    <TextField
+                        label="Caminho"
+                        value={menu.path}
+                        onChange={(event) => setMenu({
+                            ...menu,
+                            path: event.target.value
                         })}
                         required
                     />
@@ -130,4 +143,4 @@ const EditRole = () => {
     );
 }
 
-export default EditRole;
+export default EditMenu;
