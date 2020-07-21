@@ -63,7 +63,6 @@ const EditRole = () => {
         if (returnFlag) {
             return
         }
-        console.log(role.description)
         api.put(`roles/${role.id}`, role)
             .then(response => {
                 setSeverity('success')
