@@ -26,10 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/MainListItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/MainListItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,8 @@
       <workItem from="1595173940258" duration="189000" />
       <workItem from="1595174525888" duration="17637000" />
       <workItem from="1595211096716" duration="9390000" />
-      <workItem from="1595274943403" duration="6003000" />
+      <workItem from="1595274943403" duration="14331000" />
+      <workItem from="1595364991286" duration="8521000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -159,30 +161,30 @@
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595174636436" />
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595275113674">
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595365014954">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
-    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595275113674">
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595365014954" />
+    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595365014954">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
-    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595275113673">
+    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595365014954" />
+    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595365014954">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113673" />
-    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595275113674">
+    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595365014954" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595365014954">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595275113674" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595365014954" />
     <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595200619758">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595200619758" />
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595276322828">
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595283084928">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276322828" />
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595283084928" />
     <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595183756244">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
@@ -195,9 +197,9 @@
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276776836" />
-    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1595221449652">
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1595283821343">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595221449652" />
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595283821343" />
   </component>
 </project>

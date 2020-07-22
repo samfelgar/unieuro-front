@@ -10,6 +10,8 @@ import NewOrder from './pages/Orders/NewOrder'
 import NewRole from './pages/Roles/NewRole'
 import Roles from './pages/Roles'
 import EditRole from './pages/Roles/EditRole'
+import MyOrders from "./pages/Orders/MyOrders";
+import OrderDetail from "./pages/Orders/OrderDetail";
 
 const Routes = () => {
     return (
@@ -26,8 +28,14 @@ const Routes = () => {
             <Route path="/items" exact>
                 <Items />
             </Route>
+            <Route path="/users/myorders" exact>
+                <MyOrders />
+            </Route>
             <Route path="/users" exact>
                 <Users />
+            </Route>
+            <Route path="/orders/detail/:id">
+                <OrderDetail />
             </Route>
             <Route path="/orders/new">
                 <NewOrder />

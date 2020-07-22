@@ -49,6 +49,7 @@ const ListOrders = () => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
+                            <TableCell>Pedido</TableCell>
                             <TableCell>Data de criação</TableCell>
                             <TableCell>Data de entrega</TableCell>
                             <TableCell>Status</TableCell>
@@ -59,7 +60,8 @@ const ListOrders = () => {
                     </TableHead>
                     <TableBody>
                         {orders.map((order) => (
-                            <TableRow key={order.id}>
+                            <TableRow key={order.id} hover>
+                                <TableCell>{order.id}</TableCell>
                                 <TableCell>
                                     {new Date(order.created_at).getDate()}/
                                     {new Date(order.created_at).getMonth() + 1}/
@@ -74,7 +76,12 @@ const ListOrders = () => {
                                     {order.status ? "A liberar" : "Liberada"}
                                 </TableCell>
                                 <TableCell>
-                                    <Button size="small" color="primary" variant="contained" >
+                                    <Button
+                                        size="small"
+                                        color="primary"
+                                        variant="contained"
+                                        onClick={() => history.push(`/orders/detail/${order.id}`)}
+                                    >
                                         Abrir pedido
                                     </Button>
                                 </TableCell>
