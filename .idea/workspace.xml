@@ -26,11 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
+      <change afterPath="$PROJECT_DIR$/src/pages/Menu/EditMenu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Menu/NewMenu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Menu/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Items/NewItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/NewItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Items/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Roles/EditRole/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Roles/EditRole/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +109,7 @@
       <workItem from="1595174525888" duration="17637000" />
       <workItem from="1595211096716" duration="9390000" />
       <workItem from="1595274943403" duration="14331000" />
-      <workItem from="1595364991286" duration="8521000" />
+      <workItem from="1595364991286" duration="8911000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>

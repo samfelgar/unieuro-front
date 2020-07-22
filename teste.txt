@@ -1,0 +1,29 @@
+<<<<<<< Updated upstream
+########## TESTE UNIEURO SAUDE #############
+=======
+AUTOR: MAURICIO MARINHO
+DATA: 20/07/2020 
+
+
+                                Apontamentos
+>>>>>>> Stashed changes
+
+* quantidade em unidade devera selecionar somente números inteiros.
+* não é possível excluir o item.
+* mudar title do react pra logotipo da unieuro
+<<<<<<< Updated upstream
+* data de entrega tem que ser campo obrigatório pedidos
+* deixa inserir quantidade dos pedidos superior ao que se tem em estoque
+* Cadastrar itens deixa inserir data inferior ao dia atual
+* perfil deixa inserir números ao cadastrar
+* item no input marca deixa inserir números
+* validade do lote/item deixa inserir data incorreta 
+=======
+* data de entrega tem que ser campo obrigatório
+* deixa inserir quantidade do pedidos superior ao que se tem em estoque
+* Cadastrar itens deixa inserir data inferior ao dia atual
+* perfil deixa inserir números ao cadastrar
+* item marca deixa inserir números
+* validade deixa inserir data incorreta
+>>>>>>> Stashed changes
+* paginação grande colocar limite de 10 itens

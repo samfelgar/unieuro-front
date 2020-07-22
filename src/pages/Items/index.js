@@ -135,6 +135,9 @@ const Items = () => {
                             <TableCell>Item</TableCell>
                             <TableCell>Quantidade</TableCell>
                             <TableCell>Unidade</TableCell>
+                            <TableCell>Fórmula Química</TableCell>
+                            <TableCell>Peso Molecular</TableCell>
+                            <TableCell>Concentração</TableCell>
                             <TableCell>Opções</TableCell>
                         </TableRow>
                     </TableHead>
@@ -144,6 +147,9 @@ const Items = () => {
                                 <TableCell>{item.name}</TableCell>
                                 <TableCell>{calculateQtd(item.lots)}</TableCell>
                                 <TableCell>{item.unit}</TableCell>
+                                <TableCell>{item.formula}</TableCell>
+                                <TableCell>{item.molecular_weight}</TableCell>
+                                <TableCell>{item.concentration}</TableCell>
                                 <TableCell>
                                     <Button
                                         variant="contained"

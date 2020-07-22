@@ -41,11 +41,15 @@ const NewItem = () => {
     const [name, setName] = useState("");
     const [brand, setBrand] = useState("");
     const [unit, setUnit] = useState("");
+    const [formula, setFormula] = useState("");
+    const [molecular_weight, setMolecularWeight] = useState("");
+    const [concentration, setConcentration] = useState("");
 
     // Lot fields
     const [lotDescription, setLotDescription] = useState("");
     const [expiration, setExpiration] = useState(null);
     const [qtd, setQtd] = useState(1);
+    const [dispatched, setDispatched] = useState(false);
 
     // Feedback
     const [error, setError] = useState(false);
@@ -68,12 +72,17 @@ const NewItem = () => {
             name,
             brand,
             unit,
+            formula,
+            molecular_weight,
+            concentration,
             lot: {
                 description: lotDescription,
                 expiration,
                 qtd,
+                dispatched,
             } 
         };
+        console.log(data.molecular_weight);
 
         let returnFlag = false;
         if (!data.name) {
@@ -166,6 +175,24 @@ const NewItem = () => {
                             </MenuItem>
                         ))}
                     </TextField>
+                    <TextField
+                        label="Fórmula Química"
+                        value={formula}
+                        onChange={(event) => setFormula(event.target.value)}
+                        required
+                    />
+                    <TextField
+                        label="Peso Molecular"
+                        value={molecular_weight}
+                        onChange={(event) => setMolecularWeight(event.target.value)}
+                        required
+                    />
+                    <TextField
+                        label="Concentração"
+                        value={concentration}
+                        onChange={(event) => setConcentration(event.target.value)}
+                        required
+                    />
                     <h3 className={classes.formHeader}>Dados do lote</h3>
                     <TextField
                         label="Descrição do lote"
