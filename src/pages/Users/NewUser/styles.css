@@ -1,0 +1,18 @@
+form {
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+
+.form-row * {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.form-row .input-field {
+    width: 40ch;
+}
+
+.buttons-row button {
+    margin-top: 15px;
+    margin-right: 5px;
+}

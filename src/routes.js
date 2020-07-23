@@ -15,6 +15,7 @@ import OrderDetail from "./pages/Orders/OrderDetail";
 import NewMenu from './pages/Menu/NewMenu'
 import EditMenu from './pages/Menu/EditMenu'
 import Menu from './pages/Menu'
+import NewUser from "./pages/Users/NewUser";
 
 const Routes = () => {
     return (
@@ -31,8 +32,11 @@ const Routes = () => {
             <Route path="/items" exact>
                 <Items />
             </Route>
-            <Route path="/users/myorders" exact>
+            <Route path="/users/myorders">
                 <MyOrders />
+            </Route>
+            <Route path="/users/new">
+                <NewUser />
             </Route>
             <Route path="/users" exact>
                 <Users />

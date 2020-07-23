@@ -18,6 +18,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import Dialog from "@material-ui/core/Dialog";
 import Paper from '@material-ui/core/Paper'
 import AddCircleIcon from "@material-ui/icons/AddCircle";
+import LockIcon from "@material-ui/icons/Lock"
 
 const Users = () => {
     const [users, setUsers] = useState([])
@@ -26,13 +27,17 @@ const Users = () => {
     const history = useHistory()
 
     const fetchData = () => {
+        let _isMounted = true
         api.get('/users')
             .then(response => {
-                setUsers(response.data)
+                if (_isMounted) {
+                    setUsers(response.data)
+                }
             })
             .catch(error => {
                 console.log(error.response)
             })
+        return () => _isMounted = false
     }
 
     useEffect(() => {
@@ -85,15 +90,23 @@ const Users = () => {
                                 <TableCell>
                                     <Button
                                         variant="contained"
-                                        color="primary"
+                                        color="default"
                                         startIcon={<EditIcon />}
                                         onClick={() => {
                                             history.push(`users/edit/${user.id}`);
                                         }}
                                         size="small"
-                                        style={{ marginRight: 5 }}
                                     >
                                         Editar
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        size="small"
+                                        startIcon={<LockIcon />}
+                                        style={{ marginRight: 5, marginLeft: 5 }}
+                                    >
+                                        Redefinir senha
                                     </Button>
                                     <Button
                                         variant="contained"

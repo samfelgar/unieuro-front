@@ -128,7 +128,7 @@ const Items = () => {
             >
                 Novo item
             </Button>
-            <TableContainer component={Paper} style={{ width: "80%" }}>
+            <TableContainer component={Paper}>
                 <Table size="small">
                     <TableHead>
                         <TableRow>

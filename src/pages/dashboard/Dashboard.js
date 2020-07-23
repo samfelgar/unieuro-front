@@ -15,6 +15,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import MainListItems from './MainListItems';
 import Routes from '../../routes'
+import logo from '../../images/logo.png'
 
 const drawerWidth = 240;
 
@@ -136,7 +137,8 @@ export default function Dashboard({logout}) {
                         noWrap
                         className={classes.title}
                     >
-                        Unieuro
+                        <img src={logo} width={30} />
+                        <span style={{ marginLeft: 10 }}>Unieuro</span>
                     </Typography>
                 </Toolbar>
             </AppBar>

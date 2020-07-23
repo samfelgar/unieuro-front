@@ -52,16 +52,22 @@ const Login = ({login}) => {
                 <p style={{width: '25%'}}>Para acessar o sistema, informe seu email e senha.</p>
                 <div style={{width: '25%'}}>
                     <div>
-                        <TextField label="Usuário" type="email" value={email}
+                        <TextField label="E-mail" type="email" value={email}
                                    onChange={event => setEmail(event.target.value)}
                                    style={{width: '100%'}}
                                    required
+                                   inputProps={{
+                                       autoComplete: 'username'
+                                   }}
                         />
                     </div>
                     <div style={{marginTop: 10}}>
                         <TextField label="Senha" type="password" value={password}
                                    onChange={event => setPassword(event.target.value)}
                                    style={{width: '100%'}}
+                                   inputProps={{
+                                       autoComplete: 'current-password'
+                                   }}
                                    required
                         />
                     </div>
