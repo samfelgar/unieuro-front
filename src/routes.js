@@ -16,6 +16,8 @@ import NewMenu from './pages/Menu/NewMenu'
 import EditMenu from './pages/Menu/EditMenu'
 import Menu from './pages/Menu'
 import NewUser from "./pages/Users/NewUser";
+import EditUser from "./pages/Users/EditUser"
+import RedefinePass from "./pages/Users/RedefinePass";
 
 const Routes = () => {
     return (
@@ -23,13 +25,13 @@ const Routes = () => {
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/items/edit/:id" exact>
+            <Route path="/items/edit/:id">
                 <EditItem />
             </Route>
-            <Route path="/items/new" exact>
+            <Route path="/items/new">
                 <NewItem />
             </Route>
-            <Route path="/items" exact>
+            <Route path="/items">
                 <Items />
             </Route>
             <Route path="/users/myorders">
@@ -38,7 +40,13 @@ const Routes = () => {
             <Route path="/users/new">
                 <NewUser />
             </Route>
-            <Route path="/users" exact>
+            <Route path="/users/edit/:id">
+                <EditUser />
+            </Route>
+            <Route path="/users/:id/redefine">
+                <RedefinePass />
+            </Route>
+            <Route path="/users">
                 <Users />
             </Route>
             <Route path="/orders/detail/:id">
@@ -50,23 +58,23 @@ const Routes = () => {
             <Route path="/orders" exact>
                 <ListOrders />
             </Route>
-            <Route path="/roles/edit/:id" exact>
+            <Route path="/roles/edit/:id">
                 <EditRole />
             </Route>
-            <Route path="/roles/new" exact>
+            <Route path="/roles/new">
                 <NewRole />
             </Route>
-            <Route path="/roles/" exact>
+            <Route path="/roles/">
                 <Roles />
             </Route>
-            <Route path="/menu/new" exact>
+            <Route path="/menus/edit/:id">
+                <EditMenu />
+            </Route>
+            <Route path="/menus/new">
                 <NewMenu />
             </Route>
-            <Route path="/menu/" exact>
+            <Route path="/menus/">
                 <Menu />
-            </Route>
-            <Route path="/menu/edit/:id" exact>
-                <EditMenu />
             </Route>
             <Route>
                 <h1>Página não encontrada</h1>

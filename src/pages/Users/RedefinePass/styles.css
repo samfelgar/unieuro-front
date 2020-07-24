@@ -1,0 +1,15 @@
+form {
+    padding: 20px 10px;
+}
+
+form div {
+    margin-right: 10px;
+}
+
+.button-row {
+    margin-top: 10px;
+}
+
+.button-row button {
+    margin-right: 10px;
+}

@@ -105,6 +105,7 @@ const Users = () => {
                                         size="small"
                                         startIcon={<LockIcon />}
                                         style={{ marginRight: 5, marginLeft: 5 }}
+                                        onClick={() => history.push(`/users/${user.id}/redefine`)}
                                     >
                                         Redefinir senha
                                     </Button>

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from '@material-ui/core/Button';
-import { useHistory } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -22,7 +22,6 @@ import api from '../../services/api';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
-
 const Menu = () => {
     const history = useHistory()
     const [menu, setMenu] = useState([])
@@ -39,16 +38,6 @@ const Menu = () => {
     });
     const classes = useStyles();
 
-
-
-
-    function createData(id, name, path,) {
-        return { 
-            id,
-            name,
-            path
-        };
-    }
     useEffect(() => {
         fetchMenus()
     }, [])
@@ -89,25 +78,26 @@ const Menu = () => {
             })
     }
     return (
-
         <Container>
             <h1>Menu</h1>
             <Button
-                onClick={() => { history.push('/menu/new') }}
+                onClick={() => {
+                    history.push('/menus/new')
+                }}
                 variant="contained"
                 color="primary"
-                startIcon={<AddCircleIcon />}
-                style={{ marginBottom: 20 }}
+                startIcon={<AddCircleIcon/>}
+                style={{marginBottom: 20}}
             >
-                Nova Opção
-           </Button>
+                Novo menu
+            </Button>
             <TableContainer component={Paper}>
                 <Table className={classes.table} size="small" aria-label="a dense table">
                     <TableHead>
                         <TableRow>
                             <TableCell>Nome</TableCell>
                             <TableCell>Caminho</TableCell>
-                            <TableCell>Opções</TableCell>                            
+                            <TableCell>Opções</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -120,35 +110,38 @@ const Menu = () => {
                                     {menus.path}
                                 </TableCell>
                                 <TableCell>
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    startIcon={<EditIcon />}
-                                    onClick={() => { history.push('/menu/edit/' + menus.id) }}
-                                    size="small"
-                                    style={{ marginRight: 5 }}
-                                >
-                                    Editar
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                    startIcon={<DeleteIcon />}
-                                    onClick={() => {
-                                        setSelectedMenu(menus.id)
-                                        setOpenDialog(true)
-                                    }}
-                                    size="small"
-                                >
-                                    Excluir
-                                </Button>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        startIcon={<EditIcon/>}
+                                        onClick={() => {
+                                            history.push('/menus/edit/' + menus.id)
+                                        }}
+                                        size="small"
+                                        style={{marginRight: 5}}
+                                    >
+                                        Editar
+                                    </Button>
+                                    <Button
+                                        variant="contained"
+                                        color="secondary"
+                                        startIcon={<DeleteIcon/>}
+                                        onClick={() => {
+                                            setSelectedMenu(menus.id)
+                                            setOpenDialog(true)
+                                        }}
+                                        size="small"
+                                    >
+                                        Excluir
+                                    </Button>
                                 </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-            <SnackAlert openSnack={openSnack} onClose={handleSnackClose} severity={severity} snackMessage={feedbackMessage} />
+            <SnackAlert openSnack={openSnack} onClose={handleSnackClose} severity={severity}
+                        snackMessage={feedbackMessage}/>
             <Dialog
                 open={openDialog}
                 onClose={handleDialogClose}
@@ -156,7 +149,7 @@ const Menu = () => {
                 <DialogTitle>{"Apagar Perfil?"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Deseja realmente excluir este perfil?
+                        Deseja realmente excluir este menu?
                         <strong> Não é possível desfazer esta ação.</strong>
                     </DialogContentText>
                 </DialogContent>
