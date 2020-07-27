@@ -26,13 +26,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change afterPath="$PROJECT_DIR$/src/pages/Users/EditUser/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Users/EditUser/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Users/RedefinePass/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Users/RedefinePass/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Orders/DispatchOrder/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Orders/DispatchOrder/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/formatDate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Items/NewItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/NewItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Items/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Menu/EditMenu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Menu/EditMenu/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Menu/NewMenu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Menu/NewMenu/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Menu/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Roles/EditRole/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Roles/EditRole/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Roles/NewRole/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Roles/NewRole/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Roles/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Roles/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/EditUser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/EditUser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/EditUser/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/EditUser/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/NewUser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/NewUser/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/NewUser/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/NewUser/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/RedefinePass/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/RedefinePass/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Users/RedefinePass/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Users/RedefinePass/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,8 +65,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -70,10 +89,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Users/EditUser" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.json.schema" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -121,7 +140,10 @@
       <workItem from="1595364991286" duration="9675000" />
       <workItem from="1595455835303" duration="13075000" />
       <workItem from="1595475880055" duration="425000" />
-      <workItem from="1595535856322" duration="11647000" />
+      <workItem from="1595535856322" duration="12108000" />
+      <workItem from="1595623125336" duration="7804000" />
+      <workItem from="1595692227126" duration="24725000" />
+      <workItem from="1595816673391" duration="2885000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -144,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595476152114</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit user and redefine password features; minor fixes">
+      <created>1595560374867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595560374867</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,41 +207,42 @@
     <MESSAGE value="changes to comply with database" />
     <MESSAGE value="Authentication" />
     <MESSAGE value="Auth correction and Create User Component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Auth correction and Create User Component" />
+    <MESSAGE value="Edit user and redefine password features; minor fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit user and redefine password features; minor fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595174636436">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595174636436" />
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595537387242">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595816691675">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595537387242" />
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595555001780">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595816691675" />
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595816848466">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595555001780" />
-    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595555001780">
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595816848465" />
+    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595816848465">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595555001780" />
-    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595555001780">
+    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595816848465" />
+    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595816848464">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595555001780" />
-    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595555001780">
+    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595816848464" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595816848465">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595555001780" />
-    <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595475967354">
+    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595816848465" />
+    <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595743801066">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595475967354" />
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595476176841">
+    <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595743801066" />
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595560384615">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595476176841" />
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595560384615" />
     <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595183756244">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
@@ -225,10 +255,10 @@
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276776836" />
-    <state x="624" y="241" key="run.anything.popup" timestamp="1595475011157">
+    <state x="624" y="241" key="run.anything.popup" timestamp="1595728856151">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="624" y="241" key="run.anything.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595475011157" />
+    <state x="624" y="241" key="run.anything.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595728856151" />
     <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1595283821343">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>

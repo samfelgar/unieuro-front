@@ -137,7 +137,7 @@ export default function Dashboard({logout}) {
                         noWrap
                         className={classes.title}
                     >
-                        <img src={logo} width={30} />
+                        <img src={logo} width={30} alt="Centro Universitário" />
                         <span style={{ marginLeft: 10 }}>Unieuro</span>
                     </Typography>
                 </Toolbar>

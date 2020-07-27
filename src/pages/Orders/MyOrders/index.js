@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Button from "@material-ui/core/Button"
 import SnackAlert from "../../../components/SnackAlert";
 import Paper from "@material-ui/core/Paper";
+import {getFormattedDate} from "../../../utils/formatDate";
 
 import {useHistory} from 'react-router-dom'
 import api from '../../../services/api'
@@ -35,15 +36,7 @@ const MyOrders = () => {
                 setSeverity('error')
                 setOpenSnack(true)
             })
-    }, [])
-
-    const getFormattedDate = (date) => {
-        const dateObj = new Date(date)
-        const day = dateObj.getDate()
-        const month = dateObj.getMonth()
-        const year = dateObj.getFullYear()
-        return `${day}/${month}/${year}`
-    }
+    }, [currentUser])
 
     return (
         <Container>
@@ -52,6 +45,7 @@ const MyOrders = () => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
+                            <TableCell>Pedido</TableCell>
                             <TableCell>Data de entrega</TableCell>
                             <TableCell>Liberada?</TableCell>
                             <TableCell>Detalhes</TableCell>
@@ -60,8 +54,9 @@ const MyOrders = () => {
                     <TableBody>
                         {orders.map(order => (
                             <TableRow key={order.id} hover>
-                                <TableCell>{getFormattedDate(order.due_date)}</TableCell>
-                                <TableCell>{order.status ? 'Sim' : 'Não'}</TableCell>
+                                <TableCell>{order.id}</TableCell>
+                                <TableCell>{order.hasOwnProperty('due_date') ? getFormattedDate(order.due_date) : ''}</TableCell>
+                                <TableCell>{order.dispatched ? 'Sim' : 'Não'}</TableCell>
                                 <TableCell>
                                     <Button variant="contained"
                                             onClick={() => history.push(`/orders/detail/${order.id}`)}

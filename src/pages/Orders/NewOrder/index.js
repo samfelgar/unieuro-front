@@ -75,16 +75,16 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
             }
 
             if (!data.due_date) {
-                throw 'Selecione uma data de entrega.'
+                throw new Error('Selecione uma data de entrega.')
             }
 
             if (data.items.length < 1 || data.items.length !== selectedItems.length) {
-                throw 'Você deve definir quantidades para os itens selecionados.'
+                throw new Error('Você deve definir quantidades para os itens selecionados.')
             }
 
             data.items.forEach(item => {
                 if (!item.qtd || item.qtd <= 0) {
-                    throw 'Você deve definir quantidades para todos os itens selecionados.'
+                    throw new Error('Você deve definir quantidades para todos os itens selecionados.')
                 }
             })
 
@@ -213,7 +213,7 @@ const NewOrder = ({match}) => {
     const [selectedItems, setSelectedItems] = useState([]);
 
     const classes = useStyles();
-    const {path, url} = useRouteMatch()
+    const {path} = useRouteMatch()
 
     useEffect(() => {
         api.get("items/all").then((response) => {
@@ -226,7 +226,7 @@ const NewOrder = ({match}) => {
             return 0;
         }
         let qtd = 0;
-        lots.map((lot) => {
+        lots.forEach((lot) => {
             qtd += Number(lot.qtd);
         });
         return qtd;

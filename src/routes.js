@@ -12,6 +12,7 @@ import Roles from './pages/Roles'
 import EditRole from './pages/Roles/EditRole'
 import MyOrders from "./pages/Orders/MyOrders";
 import OrderDetail from "./pages/Orders/OrderDetail";
+import DispatchOrder from './pages/Orders/DispatchOrder'
 import NewMenu from './pages/Menu/NewMenu'
 import EditMenu from './pages/Menu/EditMenu'
 import Menu from './pages/Menu'
@@ -49,13 +50,19 @@ const Routes = () => {
             <Route path="/users">
                 <Users />
             </Route>
+            <Route path="/orders/:orderId/items/lots">
+                <DispatchOrder />
+            </Route>
             <Route path="/orders/detail/:id">
                 <OrderDetail />
+            </Route>
+            <Route path="/orders/myorders">
+                <MyOrders />
             </Route>
             <Route path="/orders/new">
                 <NewOrder />
             </Route>
-            <Route path="/orders" exact>
+            <Route path="/orders">
                 <ListOrders />
             </Route>
             <Route path="/roles/edit/:id">

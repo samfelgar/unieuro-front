@@ -12,6 +12,7 @@ function App() {
         setLoggedIn(true)
         sessionStorage.setItem('loggedIn', true)
         sessionStorage.setItem('userId', responseData.id)
+        sessionStorage.setItem('roleId', responseData.role_id)
     }
 
     const logout = () => {

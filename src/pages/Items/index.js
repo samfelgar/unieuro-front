@@ -87,7 +87,6 @@ const Items = () => {
     };
 
     const handleDeleteButton = (id) => {
-        console.log(id);
         api.delete(`items/${id}`)
             .then((response) => {
                 fetchItems();
@@ -108,9 +107,9 @@ const Items = () => {
             return 0;
         }
         let qtd = 0;
-        lots.map((lot) => {
+        lots.forEach((lot) => {
             qtd += Number(lot.qtd);
-        });
+        })
         return qtd;
     };
 

@@ -49,7 +49,6 @@ const NewItem = () => {
     const [lotDescription, setLotDescription] = useState("");
     const [expiration, setExpiration] = useState(null);
     const [qtd, setQtd] = useState(1);
-    const [dispatched, setDispatched] = useState(false);
 
     // Feedback
     const [error, setError] = useState(false);
@@ -79,10 +78,8 @@ const NewItem = () => {
                 description: lotDescription,
                 expiration,
                 qtd,
-                dispatched,
-            } 
+            }
         };
-        console.log(data.molecular_weight);
 
         let returnFlag = false;
         if (!data.name) {
@@ -179,19 +176,16 @@ const NewItem = () => {
                         label="Fórmula Química"
                         value={formula}
                         onChange={(event) => setFormula(event.target.value)}
-                        required
                     />
                     <TextField
                         label="Peso Molecular"
                         value={molecular_weight}
                         onChange={(event) => setMolecularWeight(event.target.value)}
-                        required
                     />
                     <TextField
                         label="Concentração"
                         value={concentration}
                         onChange={(event) => setConcentration(event.target.value)}
-                        required
                     />
                     <h3 className={classes.formHeader}>Dados do lote</h3>
                     <TextField

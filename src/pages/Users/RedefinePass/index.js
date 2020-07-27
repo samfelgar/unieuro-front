@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button"
 import api from "../../../services/api";
-import './styles.css'
+import styles from './styles.module.css'
 
 const RedefinePass = () => {
 
@@ -34,7 +34,7 @@ const RedefinePass = () => {
                 setSeverity('error')
                 setOpenSnack(true)
             })
-    }, [])
+    }, [id])
 
     const handleCloseSnack = () => {
         if (severity === 'success') {
@@ -85,7 +85,7 @@ const RedefinePass = () => {
             <Typography variant="subtitle2">Atenção! Esta funcionalidade deve ser utilizada apenas a pedido do usuário
                 e, preferencialmente, em sua presença.</Typography>
             <Paper>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className={styles.form}>
                     <TextField label="Nome do usuário" value={user.username} InputProps={{readOnly: true}}/>
                     <TextField label="Nova senha" value={password} inputProps={{autoComplete: 'password'}}
                                onChange={event => setPassword(event.target.value)}
@@ -97,7 +97,7 @@ const RedefinePass = () => {
                                helperText={passwordError ? 'As senhas estão diferentes' : ''}
                                type="password"
                     />
-                    <div className="button-row">
+                    <div className={styles['button-row']}>
                         <Button variant="contained" color="primary" type="submit">Salvar</Button>
                         <Button variant="contained" onClick={() => history.goBack()}>Voltar</Button>
                     </div>

@@ -7,7 +7,7 @@ import api from "../../../services/api";
 import Paper from "@material-ui/core/Paper"
 import SnackAlert from "../../../components/SnackAlert";
 import {useHistory, useParams} from 'react-router-dom'
-import './styles.css'
+import styles from './styles.module.css'
 
 const EditUser = () => {
 
@@ -22,6 +22,15 @@ const EditUser = () => {
     const history = useHistory()
 
     useEffect(() => {
+        api.get('/roles')
+            .then(response => {
+                setRoles(response.data)
+            })
+            .catch(error => {
+                setSnackMessage(`Houve um erro em sua requisição. Status: [${error.response.status}]`)
+                setSeverity('error')
+                setOpenSnack(true)
+            })
         api.get(`/users/${id}`)
             .then(response => {
                 setUsername(response.data.username)
@@ -33,16 +42,7 @@ const EditUser = () => {
                 setSeverity('error')
                 setOpenSnack(true)
             })
-        api.get('/roles')
-            .then(response => {
-                setRoles(response.data)
-            })
-            .catch(error => {
-                setSnackMessage(`Houve um erro em sua requisição. Status: [${error.response.status}]`)
-                setSeverity('error')
-                setOpenSnack(true)
-            })
-    }, [])
+    }, [id])
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -78,30 +78,29 @@ const EditUser = () => {
         <Container>
             <h1>Novo usuário</h1>
             <Paper>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-row">
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles['form-row']}>
                         <TextField label="Nome" required onChange={(event) => setUsername(event.target.value)}
                                    value={username}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         />
                         <TextField label="E-mail" type="email" required onChange={event => setEmail(event.target.value)}
                                    value={email}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         />
                     </div>
                     <div className="form-row">
                         <TextField label="Perfil" select value={selectedRole}
                                    onChange={event => setSelectedRole(event.target.value)}
                                    required
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         >
-                            <MenuItem value="">Selecione</MenuItem>
                             {roles.map(role => (
                                 <MenuItem key={role.id} value={role.id}>{role.description}</MenuItem>
                             ))}
                         </TextField>
                     </div>
-                    <div className="buttons-row">
+                    <div className={styles['buttons-row']}>
                         <Button variant="contained" color="primary" type="submit">Salvar</Button>
                         <Button variant="contained" color="default" onClick={() => history.goBack()}>Voltar</Button>
                     </div>

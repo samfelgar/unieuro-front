@@ -46,7 +46,6 @@ const Menu = () => {
         api.get('/menus')
             .then(response => {
                 setMenu(response.data)
-                console.log(response.data.name);
             })
             .catch(error => {
                 setFeedbackMessage('Não foi possível acessar as opções do Menu.')

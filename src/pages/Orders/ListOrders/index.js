@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {useHistory} from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import TableContainer from "@material-ui/core/TableContainer";
 import Table from "@material-ui/core/Table";
@@ -10,33 +10,35 @@ import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
 import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
-import Dialog from '@material-ui/core/Dialog'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
 import Button from '@material-ui/core/Button'
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import MenuItem from "@material-ui/core/MenuItem"
 import SnackAlert from '../../../components/SnackAlert'
 import api from "../../../services/api";
+import styles from './styles.module.css';
 
 const ListOrders = () => {
     const [orders, setOrders] = useState([]);
+    const [filter, setFilter] = useState('pending')
     const [openSnack, setOpenSnack] = useState(false)
-    const [openDialog, setOpenDialog] = useState(false)
     const [severity, setSeverity] = useState('')
     const [feedbackMessage, setFeedbackMessage] = useState('')
 
     const history = useHistory();
 
     useEffect(() => {
-        api.get("orders").then((response) => {
-            setOrders(response.data);
-        });
-    }, []);
-
-    const handleDialogClose = () => {
-        setOpenDialog(false)
-    }
+        const url = `/orders?filter=${filter}`
+        api.get(url)
+            .then((response) => {
+                setOrders(response.data);
+            })
+            .catch(error => {
+                setFeedbackMessage(`Houve um problema em sua solicitação. Status: [${error.response.status}]`)
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+    }, [filter]);
 
     const handleSnackClose = () => {
         setOpenSnack(false)
@@ -45,7 +47,16 @@ const ListOrders = () => {
     return (
         <Container>
             <h1>Pedidos</h1>
-            <TableContainer component={Paper} >
+            <div className={styles['filter-row']}>
+                <Typography component="span">Filtrar:</Typography>
+                <TextField select value={filter} onChange={event => setFilter(event.target.value)}
+                           className={styles['filter-field']}>
+                    <MenuItem value="pending">Não liberadas</MenuItem>
+                    <MenuItem value="dispatched">Liberadas</MenuItem>
+                    <MenuItem value="all">Todos</MenuItem>
+                </TextField>
+            </div>
+            <TableContainer component={Paper}>
                 <Table size="small">
                     <TableHead>
                         <TableRow>
@@ -54,7 +65,7 @@ const ListOrders = () => {
                             <TableCell>Data de entrega</TableCell>
                             <TableCell>Status</TableCell>
                             <TableCell>
-                                
+
                             </TableCell>
                         </TableRow>
                     </TableHead>
@@ -113,23 +124,6 @@ const ListOrders = () => {
                 severity={severity}
                 snackMessage={feedbackMessage}
             />
-            <Dialog open={openDialog} onClose={handleDialogClose}>
-                <DialogTitle>{"Apagar item?"}</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        Deseja realmente excluir este item?
-                        <strong> Não é possível desfazer esta ação.</strong>
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button>Cancelar</Button>
-                    <Button
-                        color="secondary"
-                    >
-                        Excluir
-                    </Button>
-                </DialogActions>
-            </Dialog>
         </Container>
     );
 };

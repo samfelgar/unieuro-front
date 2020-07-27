@@ -11,7 +11,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import Dialog from "@material-ui/core/Dialog";
 import SnackAlert from "../../../components/SnackAlert";
 import {useHistory} from 'react-router-dom'
-import './styles.css'
+import styles from './styles.module.css'
 
 const NewUser = () => {
 
@@ -101,29 +101,29 @@ const NewUser = () => {
         <Container>
             <h1>Novo usuário</h1>
             <Paper>
-                <form onSubmit={handleSubmit}>
-                    <div className="form-row">
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <div className={styles['form-row']}>
                         <TextField label="Nome" required onChange={(event) => setUsername(event.target.value)}
                                    value={username}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         />
                         <TextField label="E-mail" type="email" required onChange={event => setEmail(event.target.value)}
                                    value={email}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         />
                     </div>
-                    <div className="form-row">
+                    <div className={styles['form-row']}>
                         <TextField label="Senha" type="password" required
                                    onChange={event => setPassword(event.target.value)}
                                    value={password}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                                    inputProps={{
                                        autoComplete: 'current-password'
                                    }}
                         />
                         <TextField label="Confirme a senha" type="password" required
                                    onChange={checkPasswordConfirmation} value={passwordConfirmation}
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                                    error={passwordCheck}
                                    helperText={passwordCheck ? 'As senhas estão diferentes' : ''}
                                    inputProps={{
@@ -133,7 +133,7 @@ const NewUser = () => {
                         <TextField label="Perfil" select value={selectedRole}
                                    onChange={event => setSelectedRole(event.target.value)}
                                    required
-                                   className={'input-field'}
+                                   className={styles['input-field']}
                         >
                             <MenuItem value="">Selecione</MenuItem>
                             {roles.map(role => (
@@ -141,7 +141,7 @@ const NewUser = () => {
                             ))}
                         </TextField>
                     </div>
-                    <div className="buttons-row">
+                    <div className={styles["buttons-row"]}>
                         <Button variant="contained" color="primary" type="submit">Salvar</Button>
                         <Button variant="contained" color="default" onClick={resetForm}>Limpar</Button>
                     </div>
