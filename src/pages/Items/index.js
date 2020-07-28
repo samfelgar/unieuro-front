@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {useHistory} from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import TableContainer from "@material-ui/core/TableContainer";
 import Table from "@material-ui/core/Table";
@@ -10,8 +10,6 @@ import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
 import TablePagination from "@material-ui/core/TablePagination";
 import Paper from "@material-ui/core/Paper";
-import DeleteIcon from "@material-ui/icons/Delete";
-import EditIcon from "@material-ui/icons/Edit";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import Button from "@material-ui/core/Button";
 import SnackAlert from "../../components/SnackAlert";
@@ -122,8 +120,8 @@ const Items = () => {
                 }}
                 variant="contained"
                 color="primary"
-                startIcon={<AddCircleIcon />}
-                style={{ marginBottom: 20 }}
+                startIcon={<AddCircleIcon/>}
+                style={{marginBottom: 20}}
             >
                 Novo item
             </Button>
@@ -151,31 +149,22 @@ const Items = () => {
                                 <TableCell>{item.concentration}</TableCell>
                                 <TableCell>
                                     <Button
-                                        variant="contained"
+                                        size="small"
                                         color="primary"
-                                        startIcon={<EditIcon />}
-                                        onClick={() => {
-                                            history.push(
-                                                "/items/edit/" + item.id
-                                            );
-                                        }}
-                                        size="small"
-                                        style={{ marginRight: 5 }}
-                                    >
-                                        Editar
-                                    </Button>
+                                        onClick={() => history.push(`/items/edit/${item.id}`)}
+                                    >Editar</Button>
                                     <Button
-                                        variant="contained"
-                                        color="secondary"
-                                        startIcon={<DeleteIcon />}
-                                        onClick={() => {
-                                            setSelectedItem(item.id);
-                                            setOpenDialog(true);
-                                        }}
                                         size="small"
-                                    >
-                                        Excluir
-                                    </Button>
+                                        color="secondary"
+                                        onClick={() => {
+                                            setSelectedItem(item.id)
+                                            setOpenDialog(true)
+                                        }}
+                                    >Excluir</Button>
+                                    <Button
+                                        size="small"
+                                        onClick={() => history.push(`/items/${item.id}/lots`)}
+                                    >Detalhes</Button>
                                 </TableCell>
                             </TableRow>
                         ))}
@@ -189,7 +178,7 @@ const Items = () => {
                                 page={currentPage - 1}
                                 count={totalItems}
                                 onChangePage={handleChangePage}
-                                labelDisplayedRows={({ from, to, count }) =>
+                                labelDisplayedRows={({from, to, count}) =>
                                     `${from}-${to} de ${
                                         count !== -1 ? count : `more than ${to}`
                                     }`

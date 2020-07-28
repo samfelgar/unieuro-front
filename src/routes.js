@@ -19,6 +19,9 @@ import Menu from './pages/Menu'
 import NewUser from "./pages/Users/NewUser";
 import EditUser from "./pages/Users/EditUser"
 import RedefinePass from "./pages/Users/RedefinePass";
+import Lots from "./pages/Lots/ListLots";
+import NewLot from "./pages/Lots/NewLot";
+import EditLot from "./pages/Lots/EditLot";
 
 const Routes = () => {
     return (
@@ -29,11 +32,20 @@ const Routes = () => {
             <Route path="/items/edit/:id">
                 <EditItem />
             </Route>
+            <Route path="/items/:itemId/lots">
+                <Lots />
+            </Route>
             <Route path="/items/new">
                 <NewItem />
             </Route>
             <Route path="/items">
                 <Items />
+            </Route>
+            <Route path="/lots/new">
+                <NewLot />
+            </Route>
+            <Route path="/lots/edit/:lotId">
+                <EditLot />
             </Route>
             <Route path="/users/myorders">
                 <MyOrders />
