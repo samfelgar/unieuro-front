@@ -15,6 +15,7 @@ import {getFormattedDate} from "../../../utils/formatDate";
 
 const OrderDetail = () => {
     const [order, setOrder] = useState({})
+    const [user, setUser] = useState({})
     const [grant, setGrant] = useState(false)
     const currentRoleId = sessionStorage.getItem('roleId')
     const {id} = useParams()
@@ -33,6 +34,13 @@ const OrderDetail = () => {
         api.get(`/orders/${id}`)
             .then(response => {
                 setOrder(response.data)
+                api.get(`/users/${response.data.user_id}`)
+                    .then(response => {
+                        setUser(response.data)
+                    })
+                    .catch(error => {
+                        console.log(error.response.data)
+                    })
             })
             .catch(error => {
                 console.log(error.response.data)
@@ -56,6 +64,7 @@ const OrderDetail = () => {
     return (
         <Container>
             <h1>Pedido #{order.id}</h1>
+            <Typography><strong>Solicitante:</strong> {user.username} ({user.email})</Typography>
             <Typography><strong>Data de
                 entrega:</strong> {order.hasOwnProperty('due_date') ? getFormattedDate(order.due_date) : ''}
             </Typography>

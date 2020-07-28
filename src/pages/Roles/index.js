@@ -77,9 +77,8 @@ const Roles = () => {
             })
     }
     return (
-
         <Container>
-            <h1>Perfils</h1>
+            <h1>Perfis</h1>
             <Button
                 onClick={() => {
                     history.push('/roles/new')

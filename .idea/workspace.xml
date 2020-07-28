@@ -26,15 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/EditLot/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/EditLot/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/ListLots/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/ListLots/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/NewLot/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Lots/NewLot/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Items/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Items/EditItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Items/EditItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Roles/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Roles/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +67,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Lots/EditLot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -131,7 +127,8 @@
       <workItem from="1595623125336" duration="7804000" />
       <workItem from="1595692227126" duration="24725000" />
       <workItem from="1595816673391" duration="3142000" />
-      <workItem from="1595894489152" duration="11834000" />
+      <workItem from="1595894489152" duration="12055000" />
+      <workItem from="1595969407846" duration="3442000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -168,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595820215462</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Lots CRUD~">
+      <created>1595916786425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595916786425</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,41 +208,42 @@
     <MESSAGE value="Auth correction and Create User Component" />
     <MESSAGE value="Edit user and redefine password features; minor fixes" />
     <MESSAGE value="React warnings treatment; CSS Modules implementation; Dispatch orders; Bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="React warnings treatment; CSS Modules implementation; Dispatch orders; Bug fixes" />
+    <MESSAGE value="Lots CRUD~" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots CRUD~" />
   </component>
   <component name="WindowStateProjectService">
     <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595174636436">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595174636436" />
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595894540896">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595969500570">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595894540896" />
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595894702722">
+    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595969500570" />
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1595969477290">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595894702722" />
-    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595894702722">
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595969477290" />
+    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1595969477290">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595894702722" />
-    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595894702722">
+    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595969477290" />
+    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1595969477290">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595894702722" />
-    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595894702722">
+    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595969477290" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1595969477290">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595894702722" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595969477290" />
     <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595743801066">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595743801066" />
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595820231256">
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1595916793020">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595820231256" />
+    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595916793020" />
     <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595183756244">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>

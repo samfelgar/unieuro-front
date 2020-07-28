@@ -33,10 +33,13 @@ const EditItem = () => {
     const [item, setItem] = useState({
         id: 0,
         name: '',
-        qtd: 0,
-        unity: ''
+        brand: '',
+        unit: '',
+        formula: '',
+        molecular_weight: '',
+        concentration: ''
     })
-    const unities = ["ML", "L", "UN", "G", "KG", "M", "CM", "MOL"];
+    const units = ["ML", "L", "UN", "G", "KG", "M", "CM", "MOL"];
     const [openSnack, setOpenSnack] = useState(false)
     const [severity, setSeverity] = useState('')
     const [snackMessage, setSnackMessage] = useState('')
@@ -46,7 +49,12 @@ const EditItem = () => {
     useEffect(() => {
         api.get(`items/${id}`)
             .then(response => {
-                setItem(item => setItem(response.data))
+                setItem(response.data)
+            })
+            .catch(error => {
+                setSnackMessage(error.response.data.error)
+                setSeverity('error')
+                setOpenSnack(true)
             })
     }, [id])
     
@@ -67,7 +75,7 @@ const EditItem = () => {
             setErrorMessages(errorMessages => errorMessages.concat("O campo quantidade deve ser maior que zero."));
             returnFlag = true
         }
-        if (!item.unity) {
+        if (!item.unit) {
             setErrorMessages(errorMessages => errorMessages.concat("Selecione uma unidade."));
             returnFlag = true
         }
@@ -100,6 +108,14 @@ const EditItem = () => {
         setOpenSnack(false)
     }
 
+    const handleInputChange = event => {
+        const {name, value} = event.target
+        setItem({
+            ...item,
+            [name]: value
+        })
+    }
+
     return (
         <Container>
             <h1>Editar item</h1>
@@ -107,44 +123,52 @@ const EditItem = () => {
                 <form className={classes.root} onSubmit={handleSubmit}>
                     <TextField
                         label="Nome"
+                        name="name"
                         value={item.name}
-                        onChange={(event) => setItem({
-                            ...item,
-                            name: event.target.value
-                        })}
+                        onChange={handleInputChange}
                         required
                     />
                     <TextField
-                        label="Quantidade"
-                        value={item.qtd}
-                        onChange={(event) => setItem({
-                            ...item,
-                            qtd: event.target.value
-                        })}
-                        type="number"
-                        inputProps={{ min: 1, step: 0.1 }}
-                        required
+                        label="Marca"
+                        name="brand"
+                        value={item.brand}
+                        onChange={handleInputChange}
                     />
                     <TextField
-                        id="unity-label"
+                        name="unit"
                         select
                         label="Unidade"
-                        value={item.unity}
-                        onChange={(event) => setItem({
-                            ...item,
-                            unity: event.target.value
-                        })}
+                        value={item.unit}
+                        onChange={handleInputChange}
                         required
                     >
-                        {unities.map((un) => (
-                            <MenuItem key={un} value={un}>
-                                {un}
+                        {units.map((unit) => (
+                            <MenuItem key={unit} value={unit}>
+                                {unit}
                             </MenuItem>
                         ))}
                     </TextField>
+                    <TextField
+                        label="Fórmula Química"
+                        name="formula"
+                        value={item.formula}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label="Peso molecular"
+                        name="molecular_weight"
+                        value={item.molecular_weight}
+                        onChange={handleInputChange}
+                    />
+                    <TextField
+                        label="Concentração"
+                        name="concentration"
+                        value={item.concentration}
+                        onChange={handleInputChange}
+                    />
                     <div className={classes.buttons}>
                         <Button
-                            onClick={(event) => handleSubmit(event)}
+                            type="submit"
                             variant="contained"
                             color="primary"
                             style={{ marginBottom: 20 }}
