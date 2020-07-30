@@ -8,7 +8,8 @@ import Container from '@material-ui/core/Container';
 import api from '../../../services/api';
 import ErrorMessageDialog from '../../../components/ErrorMessageDialog';
 import SnackAlert from '../../../components/SnackAlert';
-
+import {paths} from '../../../utils/routePaths'
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,12 +26,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
 const NewMenu = () => {
     const history = useHistory()
     const classes = useStyles();
-    const [name, setName] = useState();
-    const [path, setPath] = useState();
+    const [name, setName] = useState('');
+    const [path, setPath] = useState('');
     const [error, setError] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
     const [openSnack, setOpenSnack] = useState(false);
@@ -64,7 +64,7 @@ const NewMenu = () => {
         api.post('/menus', data)
             .then(response => {
                 setSeverity('success')
-                setSnackMessage(`O Perfil "${response.data.name}" foi criado com sucesso!`)
+                setSnackMessage(`O menu "${response.data.name}" foi criado com sucesso!`)
                 setOpenSnack(true)
             })
             .catch(error => {
@@ -88,7 +88,7 @@ const NewMenu = () => {
 
     return (
         <Container>
-            <h1>Nova Opção</h1>
+            <h1>Novo menu</h1>
             <Paper>
                 <form className={classes.root} onSubmit={handleSubmit}>
                     <TextField
@@ -102,7 +102,12 @@ const NewMenu = () => {
                         value={path}
                         onChange={(event) => setPath(event.target.value)}
                         required
-                    />
+                        select
+                    >
+                        {paths.map(path => (
+                            <MenuItem key={path.path} value={path.path}>{path.path}</MenuItem>
+                        ))}
+                    </TextField>
                 </form>
                 <div className={classes.buttons}>
                     <Button

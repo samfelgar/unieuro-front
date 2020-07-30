@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const NewRole = () => {
     const history = useHistory()
     const classes = useStyles();
-    const [description, setDescription] = useState();
+    const [description, setDescription] = useState('');
     const [error, setError] = useState(false);
     const [errorMessages, setErrorMessages] = useState([]);
     const [openSnack, setOpenSnack] = useState(false);

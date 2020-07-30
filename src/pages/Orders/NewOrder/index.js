@@ -75,18 +75,24 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
             }
 
             if (!data.due_date) {
-                throw new Error('Selecione uma data de entrega.')
+                setDialogMessage('Selecione uma data de entrega.')
+                setOpenDialog(true)
+                return
             }
 
             if (data.items.length < 1 || data.items.length !== selectedItems.length) {
-                throw new Error('Você deve definir quantidades para os itens selecionados.')
+                setDialogMessage('Você deve definir quantidades para os itens selecionados.')
+                setOpenDialog(true)
+                return
             }
 
+            let errorFlag = false
             data.items.forEach(item => {
                 if (!item.qtd || item.qtd <= 0) {
-                    throw new Error('Você deve definir quantidades para todos os itens selecionados.')
+                    errorFlag = true
                 }
             })
+            if (errorFlag) return
 
             api.post('/orders', data)
                 .then(response => {
@@ -107,7 +113,7 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
 
     const handleCloseSnackBar = () => {
         if (severity === 'success') {
-            history.push('/orders')
+            history.push('/users/myorders')
         }
         setOpenSnack(false)
     }

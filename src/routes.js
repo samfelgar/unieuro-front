@@ -1,100 +1,15 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Items from './pages/Items'
-import NewItem from './pages/Items/NewItem'
-import EditItem from './pages/Items/EditItem'
-import Users from './pages/Users'
-import ListOrders from './pages/Orders/ListOrders'
-import NewOrder from './pages/Orders/NewOrder'
-import NewRole from './pages/Roles/NewRole'
-import Roles from './pages/Roles'
-import EditRole from './pages/Roles/EditRole'
-import MyOrders from "./pages/Orders/MyOrders";
-import OrderDetail from "./pages/Orders/OrderDetail";
-import DispatchOrder from './pages/Orders/DispatchOrder'
-import NewMenu from './pages/Menu/NewMenu'
-import EditMenu from './pages/Menu/EditMenu'
-import Menu from './pages/Menu'
-import NewUser from "./pages/Users/NewUser";
-import EditUser from "./pages/Users/EditUser"
-import RedefinePass from "./pages/Users/RedefinePass";
-import Lots from "./pages/Lots/ListLots";
-import NewLot from "./pages/Lots/NewLot";
-import EditLot from "./pages/Lots/EditLot";
+import {paths} from './utils/routePaths'
 
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/" exact>
-                <Home />
-            </Route>
-            <Route path="/items/edit/:id">
-                <EditItem />
-            </Route>
-            <Route path="/items/:itemId/lots">
-                <Lots />
-            </Route>
-            <Route path="/items/new">
-                <NewItem />
-            </Route>
-            <Route path="/items">
-                <Items />
-            </Route>
-            <Route path="/lots/new">
-                <NewLot />
-            </Route>
-            <Route path="/lots/edit/:lotId">
-                <EditLot />
-            </Route>
-            <Route path="/users/myorders">
-                <MyOrders />
-            </Route>
-            <Route path="/users/new">
-                <NewUser />
-            </Route>
-            <Route path="/users/edit/:id">
-                <EditUser />
-            </Route>
-            <Route path="/users/:id/redefine">
-                <RedefinePass />
-            </Route>
-            <Route path="/users">
-                <Users />
-            </Route>
-            <Route path="/orders/:orderId/items/lots">
-                <DispatchOrder />
-            </Route>
-            <Route path="/orders/detail/:id">
-                <OrderDetail />
-            </Route>
-            <Route path="/orders/myorders">
-                <MyOrders />
-            </Route>
-            <Route path="/orders/new">
-                <NewOrder />
-            </Route>
-            <Route path="/orders">
-                <ListOrders />
-            </Route>
-            <Route path="/roles/edit/:id">
-                <EditRole />
-            </Route>
-            <Route path="/roles/new">
-                <NewRole />
-            </Route>
-            <Route path="/roles/">
-                <Roles />
-            </Route>
-            <Route path="/menus/edit/:id">
-                <EditMenu />
-            </Route>
-            <Route path="/menus/new">
-                <NewMenu />
-            </Route>
-            <Route path="/menus/">
-                <Menu />
-            </Route>
+            {paths.map(path => (
+                <Route key={path.path} path={path.path} exact={path.exact}>
+                    {path.component}
+                </Route>
+            ))}
             <Route>
                 <h1>Página não encontrada</h1>
             </Route>

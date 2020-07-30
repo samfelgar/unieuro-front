@@ -8,6 +8,8 @@ import Paper from "@material-ui/core/Paper";
 import ErrorMessageDialog from '../../../components/ErrorMessageDialog'
 import SnackAlert from '../../../components/SnackAlert'
 import api from '../../../services/api'
+import {paths} from "../../../utils/routePaths";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -114,7 +116,12 @@ const EditMenu = () => {
                             path: event.target.value
                         })}
                         required
-                    />
+                        select
+                    >
+                        {paths.map(path => (
+                            <MenuItem key={path.path} value={path.path}>{path.path}</MenuItem>
+                        ))}
+                    </TextField>
                     <div className={classes.buttons}>
                         <Button
                             onClick={(event) => handleSubmit(event)}

@@ -26,23 +26,23 @@ const ListItemLink = (props) => {
     );
 }
 
-const MainListItems = ({logout}) => {
+const MainListItems = ({logout, roleID}) => {
 
     const [menuItems, setMenuItems] = useState([])
 
     useEffect(() => {
-        api.get('/menus')
+        api.get(`/roles/${roleID}/menus`)
             .then((response) => {
-                setMenuItems(response.data)
+                setMenuItems(response.data.menus)
             })
-    }, [])
+    }, [roleID])
 
     return (
         <div>
             <ListItemLink primary="Início" to="/" icon={<HomeIcon/>}/>
-            {menuItems.map((item) => {
-                return <ListItemLink primary={item.name} to={item.path} key={item.id} icon={<ChevronRightIcon/>}/>
-            })}
+            {menuItems.map((item) => (
+                <ListItemLink primary={item.name} to={item.path} key={item.id} icon={<ChevronRightIcon/>}/>
+            ))}
             <ListItem button onClick={logout}>
                 <ListItemIcon>
                     <ExitToAppIcon />

@@ -24,7 +24,7 @@ const OrderDetail = () => {
     useEffect(() => {
         api.get(`/roles/${currentRoleId}`)
             .then(response => {
-                if (response.data.description === 'Administração') {
+                if (response.data.description === 'Almoxarifado') {
                     setGrant(true)
                 }
             })
