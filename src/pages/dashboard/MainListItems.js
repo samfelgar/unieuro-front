@@ -26,11 +26,15 @@ const ListItemLink = (props) => {
     );
 }
 
-const MainListItems = ({logout, roleID}) => {
+const MainListItems = ({logout}) => {
 
     const [menuItems, setMenuItems] = useState([])
+    const roleID = sessionStorage.getItem('roleId')
 
     useEffect(() => {
+        if (!roleID) {
+            return
+        }
         api.get(`/roles/${roleID}/menus`)
             .then((response) => {
                 setMenuItems(response.data.menus)

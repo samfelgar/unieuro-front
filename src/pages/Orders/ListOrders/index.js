@@ -51,8 +51,8 @@ const ListOrders = () => {
                 <Typography component="span">Filtrar:</Typography>
                 <TextField select value={filter} onChange={event => setFilter(event.target.value)}
                            className={styles['filter-field']}>
-                    <MenuItem value="pending">Não liberadas</MenuItem>
-                    <MenuItem value="dispatched">Liberadas</MenuItem>
+                    <MenuItem value="pending">Não liberados</MenuItem>
+                    <MenuItem value="dispatched">Liberados</MenuItem>
                     <MenuItem value="all">Todos</MenuItem>
                 </TextField>
             </div>
@@ -84,7 +84,7 @@ const ListOrders = () => {
                                     {new Date(order.due_date).getFullYear()}
                                 </TableCell>
                                 <TableCell>
-                                    {order.status ? "A liberar" : "Liberada"}
+                                    {!order.dispatched ? "A liberar" : "Liberado"}
                                 </TableCell>
                                 <TableCell>
                                     <Button

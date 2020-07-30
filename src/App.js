@@ -7,13 +7,11 @@ import api from './services/api'
 function App() {
 
     const [loggedIn, setLoggedIn] = useState(sessionStorage.getItem('loggedIn') === 'true' || false)
-    const [roleID, setRoleID] = useState(null)
 
     const login = (responseData) => {
         sessionStorage.setItem('loggedIn', true)
         sessionStorage.setItem('userId', responseData.id)
         sessionStorage.setItem('roleId', responseData.role_id)
-        setRoleID(responseData.role_id)
         setLoggedIn(true)
     }
 
@@ -29,7 +27,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            {loggedIn ? <Dashboard logout={logout} roleID={roleID}/> : <Login login={login} />}
+            {loggedIn ? <Dashboard logout={logout} /> : <Login login={login} />}
         </BrowserRouter>
     );
 }

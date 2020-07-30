@@ -98,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Dashboard({logout, roleID}) {
+export default function Dashboard({logout}) {
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
@@ -158,7 +158,7 @@ export default function Dashboard({logout, roleID}) {
                 <Divider/>
 
                 <List>
-                    <MainListItems logout={logout} roleID={roleID}/>
+                    <MainListItems logout={logout} />
                 </List>
             </Drawer>
 
