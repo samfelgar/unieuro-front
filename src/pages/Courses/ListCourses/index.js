@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Button from '@material-ui/core/Button';
 import {useHistory} from 'react-router-dom';
 import Container from '@material-ui/core/Container';
-import {makeStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,43 +11,36 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import SnackAlert from '../../components/SnackAlert';
+import SnackAlert from '../../../components/SnackAlert';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import api from '../../services/api';
+import api from '../../../services/api';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 
 
-const Menu = () => {
+const ListCourses = () => {
     const history = useHistory()
-    const [menu, setMenu] = useState([])
+    const [courses, setCourses] = useState([])
     const [severity, setSeverity] = useState('')
     const [feedbackMessage, setFeedbackMessage] = useState('')
     const [openSnack, setOpenSnack] = useState(false)
-    const [selectedMenu, setSelectedMenu] = useState(0)
+    const [selectedCourse, setSelectedCourse] = useState(0)
     const [openDialog, setOpenDialog] = useState(false)
 
-    const useStyles = makeStyles({
-        table: {
-            minWidth: 650,
-        },
-    });
-    const classes = useStyles();
-
     useEffect(() => {
-        fetchMenus()
+        fetchCourses()
     }, [])
 
-    const fetchMenus = () => {
-        api.get('/menus')
+    const fetchCourses = () => {
+        api.get('/courses')
             .then(response => {
-                setMenu(response.data)
+                setCourses(response.data)
             })
             .catch(error => {
-                setFeedbackMessage('Não foi possível acessar as opções do Menu.')
+                setFeedbackMessage('Houve um erro em sua solicitação.')
                 setSeverity('error')
                 setOpenSnack(true)
             })
@@ -62,51 +54,48 @@ const Menu = () => {
     }
 
     const handleDeleteButton = id => {
-        api.delete(`menus/${id}`)
+        api.delete(`courses/${id}`)
             .then(response => {
-                fetchMenus()
+                fetchCourses()
                 setOpenDialog(false)
-                setFeedbackMessage('A opção do Menu foi excluída.')
+                setFeedbackMessage('O curso foi excluído.')
                 setSeverity('success')
                 setOpenSnack(true)
             })
             .catch(error => {
-                setFeedbackMessage('Não foi possível excluir esta opção.')
+                setFeedbackMessage('Não foi possível excluir o curso.')
                 setSeverity('error')
                 setOpenSnack(true)
             })
     }
+
     return (
         <Container>
-            <h1>Menu</h1>
+            <h1>Cursos</h1>
             <Button
                 onClick={() => {
-                    history.push('/menus/new')
+                    history.push('/courses/new')
                 }}
                 variant="contained"
                 color="primary"
                 startIcon={<AddCircleIcon/>}
                 style={{marginBottom: 20}}
             >
-                Novo menu
+                Novo curso
             </Button>
             <TableContainer component={Paper}>
-                <Table className={classes.table} size="small" aria-label="a dense table">
+                <Table size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Nome</TableCell>
-                            <TableCell>Caminho</TableCell>
+                            <TableCell>Descrição</TableCell>
                             <TableCell>Opções</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {menu.map((menus) => (
-                            <TableRow key={menus.id}>
-                                <TableCell component="th" scope="row">
-                                    {menus.name}
-                                </TableCell>
-                                <TableCell component="th" scope="row">
-                                    {menus.path}
+                        {courses.map((course) => (
+                            <TableRow key={course.id}>
+                                <TableCell>
+                                    {course.description}
                                 </TableCell>
                                 <TableCell>
                                     <Button
@@ -114,7 +103,7 @@ const Menu = () => {
                                         color="primary"
                                         startIcon={<EditIcon/>}
                                         onClick={() => {
-                                            history.push('/menus/edit/' + menus.id)
+                                            history.push('/courses/edit/' + course.id)
                                         }}
                                         size="small"
                                         style={{marginRight: 5}}
@@ -126,7 +115,7 @@ const Menu = () => {
                                         color="secondary"
                                         startIcon={<DeleteIcon/>}
                                         onClick={() => {
-                                            setSelectedMenu(menus.id)
+                                            setSelectedCourse(course.id)
                                             setOpenDialog(true)
                                         }}
                                         size="small"
@@ -145,10 +134,10 @@ const Menu = () => {
                 open={openDialog}
                 onClose={handleDialogClose}
             >
-                <DialogTitle>{"Apagar menu?"}</DialogTitle>
+                <DialogTitle>{"Apagar curso?"}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Deseja realmente excluir este menu?
+                        Deseja realmente excluir este curso?
                         <strong> Não é possível desfazer esta ação.</strong>
                     </DialogContentText>
                 </DialogContent>
@@ -156,7 +145,7 @@ const Menu = () => {
                     <Button onClick={handleDialogClose}>
                         Cancelar
                     </Button>
-                    <Button onClick={() => handleDeleteButton(selectedMenu)} color="secondary">
+                    <Button onClick={() => handleDeleteButton(selectedCourse)} color="secondary">
                         Excluir
                     </Button>
                 </DialogActions>
@@ -165,4 +154,4 @@ const Menu = () => {
     );
 }
 
-export default Menu;
+export default ListCourses;

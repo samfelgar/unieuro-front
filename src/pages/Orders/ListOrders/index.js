@@ -17,10 +17,11 @@ import MenuItem from "@material-ui/core/MenuItem"
 import SnackAlert from '../../../components/SnackAlert'
 import api from "../../../services/api";
 import styles from './styles.module.css';
+import {getFormattedDate} from "../../../utils/formatDate";
 
 const ListOrders = () => {
     const [orders, setOrders] = useState([]);
-    const [filter, setFilter] = useState('pending')
+    const [filter, setFilter] = useState('created')
     const [openSnack, setOpenSnack] = useState(false)
     const [severity, setSeverity] = useState('')
     const [feedbackMessage, setFeedbackMessage] = useState('')
@@ -51,7 +52,7 @@ const ListOrders = () => {
                 <Typography component="span">Filtrar:</Typography>
                 <TextField select value={filter} onChange={event => setFilter(event.target.value)}
                            className={styles['filter-field']}>
-                    <MenuItem value="pending">Não liberados</MenuItem>
+                    <MenuItem value="created">Não liberados</MenuItem>
                     <MenuItem value="dispatched">Liberados</MenuItem>
                     <MenuItem value="all">Todos</MenuItem>
                 </TextField>
@@ -79,12 +80,10 @@ const ListOrders = () => {
                                     {new Date(order.created_at).getFullYear()}
                                 </TableCell>
                                 <TableCell>
-                                    {new Date(order.due_date).getDate()}/
-                                    {new Date(order.due_date).getMonth() + 1}/
-                                    {new Date(order.due_date).getFullYear()}
+                                    {getFormattedDate(order.due_date)}
                                 </TableCell>
                                 <TableCell>
-                                    {!order.dispatched ? "A liberar" : "Liberado"}
+                                    {order.dispatched === 'created' ? "A liberar" : "Liberado"}
                                 </TableCell>
                                 <TableCell>
                                     <Button

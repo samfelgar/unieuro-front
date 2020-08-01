@@ -11,9 +11,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import api from "../../../services/api";
-import {MuiPickersUtilsProvider, KeyboardDatePicker} from '@material-ui/pickers'
-import DateFnsUtils from '@date-io/date-fns';
-import ptBRLocale from "date-fns/locale/pt-BR";
 import {tableIcons, localization} from "../../../utils/materialTableUtils";
 import {makeStyles} from "@material-ui/core";
 import {Switch, Route, Link as RouterLink, useHistory, useRouteMatch} from "react-router-dom";
@@ -23,6 +20,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from "@material-ui/core/DialogTitle";
 import SnackAlert from "../../../components/SnackAlert";
+import Box from "@material-ui/core/Box";
+import MenuItem from "@material-ui/core/MenuItem";
+import {MuiPickersUtilsProvider, KeyboardDatePicker} from '@material-ui/pickers'
+import DateFnsUtils from '@date-io/date-fns';
+import ptBRLocale from "date-fns/locale/pt-BR";
 
 const useStyles = makeStyles((theme) => ({
     continueButton: {
@@ -35,11 +37,24 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "flex-end",
     },
+    inputField: {
+        marginLeft: 10,
+        width: '30ch'
+    },
+    selectFields: {
+        width: '30ch'
+    }
 }));
 
 const SelectQuantities = ({selectedItems, calculateQtd}) => {
+
     const [items, setItems] = useState([]);
-    const [dueDate, setDueDate] = useState(null);
+    const [labs, setLabs] = useState([])
+    const [courses, setCourses] = useState([])
+    const [selectedLab, setSelectedLab] = useState('')
+    const [selectedCourse, setSelectedCourse] = useState('')
+    const [dueDate, setDueDate] = useState(new Date());
+    const [dueTime, setDueTime] = useState('')
 
     const classes = useStyles();
     const history = useHistory();
@@ -49,6 +64,27 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
     const [openSnack, setOpenSnack] = useState(false);
     const [severity, setSeverity] = useState('success');
     const [snackMessage, setSnackMessage] = useState('');
+
+    useEffect(() => {
+        api.get('/labs')
+            .then(response => {
+                setLabs(response.data)
+            })
+            .catch(error => {
+                setSnackMessage('Nao foi possivel carregar os laboratorios.')
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+        api.get('/courses')
+            .then(response => {
+                setCourses(response.data)
+            })
+            .catch(error => {
+                setSnackMessage('Nao foi possivel carregar os cursos.')
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+    }, [])
 
     const handleChangeQuantity = (changedItem) => {
         let newItems = items
@@ -71,11 +107,32 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
             const data = {
                 'user_id': currentUser,
                 'due_date': dueDate,
+                'due_time': dueTime,
+                'lab_id': selectedLab,
+                'course_id': selectedCourse,
                 items
+            }
+
+            if (!data.lab_id) {
+                setDialogMessage('Selecione um laboratório.')
+                setOpenDialog(true)
+                return
+            }
+
+            if (!data.course_id) {
+                setDialogMessage('Selecione um curso.')
+                setOpenDialog(true)
+                return
             }
 
             if (!data.due_date) {
                 setDialogMessage('Selecione uma data de entrega.')
+                setOpenDialog(true)
+                return
+            }
+
+            if (!data.due_time) {
+                setDialogMessage('Selecione um horário de entrega.')
                 setOpenDialog(true)
                 return
             }
@@ -101,7 +158,7 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                     setOpenSnack(true)
                 })
                 .catch(error => {
-                    setSnackMessage(`Houve um erro em sua requisição. STATUS ${error.response.status}`)
+                    setSnackMessage(`Houve um erro em sua requisição. ${error.response.data.error || error.response.status}`)
                     setSeverity('error')
                     setOpenSnack(true)
                 })
@@ -124,31 +181,75 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
         }
     }
 
+    const getHours = () => {
+        const hours = []
+        for (let i = 0, j = 8; i < 15; i++, j++) {
+            const hour = `${j}:00`
+            hours.push(<MenuItem key={i} value={hour}>{hour}</MenuItem>)
+        }
+        return hours
+    }
+
     return (
         <>
-            <p>Defina a quantidade desejada</p>
-            <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ptBRLocale}>
-                <KeyboardDatePicker
-                    label="Data de entrega"
-                    format="dd/MM/yyyy"
-                    onChange={(date) => setDueDate(date)}
-                    value={dueDate}
-                    variant="inline"
-                    disableToolbar
-                    disablePast
-                    autoOk
-                />
-            </MuiPickersUtilsProvider>
-            <span className={classes.buttonContainer}>
-                <Button
-                    variant="contained"
-                    color="primary"
-                    className={classes.continueButton}
-                    onClick={handleSave}
-                >
-                    Salvar
-                </Button>
-            </span>
+            <Box mb={2}>
+                <Box mb={2}>
+                    <TextField
+                        label="Laboratório"
+                        value={selectedLab}
+                        onChange={event => setSelectedLab(event.target.value)}
+                        select
+                        className={classes.selectFields}
+                    >
+                        {labs.map(lab => (
+                            <MenuItem key={lab.id} value={lab.id}>{lab.description} - {lab.comment}</MenuItem>
+                        ))}
+                    </TextField>
+                    <TextField
+                        label="Curso"
+                        value={selectedCourse}
+                        onChange={event => setSelectedCourse(event.target.value)}
+                        select
+                        className={[classes.inputField, classes.selectFields].join(' ')}
+                    >
+                        {courses.map(course => (
+                            <MenuItem key={course.id} value={course.id}>{course.description}</MenuItem>
+                        ))}
+                    </TextField>
+                </Box>
+                <Box>
+                    <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ptBRLocale}>
+                        <KeyboardDatePicker
+                            label="Data de entrega"
+                            format="dd/MM/yyyy"
+                            onChange={(date) => setDueDate(date)}
+                            value={dueDate}
+                            variant="inline"
+                            disableToolbar
+                            disablePast
+                            autoOk
+                        />
+                    </MuiPickersUtilsProvider>
+                    <TextField
+                        label="Hora de entrega"
+                        value={dueTime}
+                        onChange={event => setDueTime(event.target.value)}
+                        select
+                        className={classes.inputField}
+                    >
+                        {getHours()}
+                    </TextField>
+                </Box>
+                <Box mt={2}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={handleSave}
+                    >
+                        Salvar
+                    </Button>
+                </Box>
+            </Box>
             <TableContainer component={Paper}>
                 <Table>
                     <TableHead>

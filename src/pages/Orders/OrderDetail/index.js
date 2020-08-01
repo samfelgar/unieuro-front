@@ -14,8 +14,23 @@ import Typography from "@material-ui/core/Typography";
 import {getFormattedDate} from "../../../utils/formatDate";
 
 const OrderDetail = () => {
-    const [order, setOrder] = useState({})
-    const [user, setUser] = useState({})
+    const initialOrder = {
+        id: null,
+        due_date: null,
+        due_time: null,
+        user: {
+            username: '',
+            email: ''
+        },
+        lab: {
+            description: ''
+        },
+        course: {
+            description: ''
+        },
+        items: []
+    }
+    const [order, setOrder] = useState(initialOrder)
     const [grant, setGrant] = useState(false)
     const currentRoleId = sessionStorage.getItem('roleId')
     const {id} = useParams()
@@ -34,13 +49,6 @@ const OrderDetail = () => {
         api.get(`/orders/${id}`)
             .then(response => {
                 setOrder(response.data)
-                api.get(`/users/${response.data.user_id}`)
-                    .then(response => {
-                        setUser(response.data)
-                    })
-                    .catch(error => {
-                        console.log(error.response.data)
-                    })
             })
             .catch(error => {
                 console.log(error.response.data)
@@ -64,12 +72,15 @@ const OrderDetail = () => {
     return (
         <Container>
             <h1>Pedido #{order.id}</h1>
-            <Typography><strong>Solicitante:</strong> {user.username} ({user.email})</Typography>
+            <Typography><strong>Solicitante:</strong> {order.user.username} {`(${order.user.email})`}</Typography>
             <Typography><strong>Data de
                 entrega:</strong> {order.hasOwnProperty('due_date') ? getFormattedDate(order.due_date) : ''}
             </Typography>
-            <Typography><strong>Liberada:</strong> {order.dispatched ? 'Sim' : 'Não'}</Typography>
-            {grant && !order.dispatched ? dispatchButton() : null}
+            <Typography><strong>Hora de entrega:</strong> {order.due_time}</Typography>
+            <Typography><strong>Curso:</strong> {order.course.description}</Typography>
+            <Typography><strong>Laboratório:</strong> {order.lab.description}</Typography>
+            <Typography><strong>Liberada:</strong> {order.dispatched !== 'created' ? 'Sim' : 'Não'}</Typography>
+            {grant && order.dispatched === 'created' ? dispatchButton() : null}
             <div>
                 <TableContainer component={Paper}>
                     <Table>

@@ -22,6 +22,12 @@ import EditMenu from "../pages/Menu/EditMenu";
 import NewMenu from "../pages/Menu/NewMenu";
 import Menu from "../pages/Menu";
 import Permissions from "../pages/Permissions";
+import ListLabs from "../pages/Labs/ListLabs";
+import NewLab from "../pages/Labs/NewLab";
+import EditLab from "../pages/Labs/EditLab";
+import ListCourses from "../pages/Courses/ListCourses";
+import NewCourse from "../pages/Courses/NewCourse";
+import EditCourse from "../pages/Courses/EditCourse";
 
 export const paths = [
     {path: '/', exact: true, component: <Home />},
@@ -48,4 +54,10 @@ export const paths = [
     {path: '/menus/new', exact: false, component: <NewMenu />},
     {path: '/menus', exact: false, component: <Menu />},
     {path: '/permissions', exact: false, component: <Permissions />},
+    {path: '/labs/edit/:labId', exact: false, component: <EditLab />},
+    {path: '/labs/new', exact: false, component: <NewLab />},
+    {path: '/labs', exact: false, component: <ListLabs />},
+    {path: '/courses/edit/:courseId', exact: false, component: <EditCourse />},
+    {path: '/courses/new', exact: false, component: <NewCourse />},
+    {path: '/courses', exact: false, component: <ListCourses />},
 ]
