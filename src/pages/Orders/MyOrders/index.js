@@ -56,7 +56,7 @@ const MyOrders = () => {
                             <TableRow key={order.id} hover>
                                 <TableCell>{order.id}</TableCell>
                                 <TableCell>{order.hasOwnProperty('due_date') ? getFormattedDate(order.due_date) : ''}</TableCell>
-                                <TableCell>{order.dispatched !== 'created' ? 'Sim' : 'Não'}</TableCell>
+                                <TableCell>{order.dispatched === 'dispatched' ? 'Sim' : 'Não'}</TableCell>
                                 <TableCell>
                                     <Button variant="contained"
                                             onClick={() => history.push(`/orders/detail/${order.id}`)}

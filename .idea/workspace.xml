@@ -20,30 +20,17 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:front" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change afterPath="$PROJECT_DIR$/src/pages/Courses/EditCourse/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Courses/EditCourse/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Courses/ListCourses/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Courses/NewCourse/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Courses/NewCourse/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Labs/EditLab/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Labs/EditLab/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Labs/ListLabs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Labs/NewLab/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Labs/NewLab/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Menu/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Menu/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/formatDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/routePaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/routePaths.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +66,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Courses/EditCourse" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -149,6 +144,7 @@
       <workItem from="1596141235681" duration="16082000" />
       <workItem from="1596246863529" duration="8583000" />
       <workItem from="1596296297803" duration="3471000" />
+      <workItem from="1605417620549" duration="3358000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -240,7 +236,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="front" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -266,117 +262,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595174636436">
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605420605274">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="418" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595174636436" />
-    <state x="663" y="333" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596165330256">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="663" y="333" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596165330256" />
-    <state x="100" y="127" width="1720" height="809" key="DiffContextDialog" timestamp="1596251391288">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="100" y="127" width="1720" height="809" key="DiffContextDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596251391288" />
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl" timestamp="1596141244549">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="743" y="289" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596141244549" />
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1596297145529">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596297145529" />
-    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1596297145529">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596297145529" />
-    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1596297145528">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596297145528" />
-    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1596297145529">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596297145529" />
-    <state width="1874" height="322" key="GridCell.Tab.1.bottom" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.1.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.1.center" timestamp="1596087588565">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.1.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588565" />
-    <state width="1874" height="322" key="GridCell.Tab.1.left" timestamp="1596087588565">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.1.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588565" />
-    <state width="1874" height="322" key="GridCell.Tab.1.right" timestamp="1596087588565">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.1.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588565" />
-    <state width="1874" height="322" key="GridCell.Tab.2.bottom" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.2.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.2.center" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.2.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.2.left" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.2.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.2.right" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.2.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.3.bottom" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.3.bottom/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.3.center" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.3.center/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.3.left" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.3.left/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state width="1874" height="322" key="GridCell.Tab.3.right" timestamp="1596087588566">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state width="1874" height="322" key="GridCell.Tab.3.right/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596087588566" />
-    <state x="449" y="166" width="1022" height="737" key="SettingsEditor" timestamp="1595743801066">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="449" y="166" width="1022" height="737" key="SettingsEditor/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595743801066" />
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2" timestamp="1596152188951">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="555" y="267" width="790" height="542" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596152188951" />
-    <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595183756244">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="574" y="171" width="762" height="728" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595183756244" />
-    <state x="731" y="446" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596164389248">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="731" y="446" width="448" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596164389248" />
-    <state x="651" y="140" width="618" height="783" key="find.popup" timestamp="1596083505611">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="651" y="140" width="618" height="783" key="find.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596083505611" />
-    <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog" timestamp="1595276776836">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="605" y="320" width="700" height="430" key="git4idea.merge.GitPullDialog/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595276776836" />
-    <state x="624" y="241" key="run.anything.popup" timestamp="1596082737775">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="624" y="241" key="run.anything.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1596082737775" />
-    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1595283821343">
-      <screen x="0" y="27" width="1920" height="1009" />
-    </state>
-    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup/0.27.1920.1009/1920.312.1366.768@0.27.1920.1009" timestamp="1595283821343" />
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605420605274" />
   </component>
 </project>

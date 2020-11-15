@@ -53,6 +53,7 @@ const ListOrders = () => {
                 <TextField select value={filter} onChange={event => setFilter(event.target.value)}
                            className={styles['filter-field']}>
                     <MenuItem value="created">Não liberados</MenuItem>
+                    <MenuItem value="processing">Em processamento</MenuItem>
                     <MenuItem value="dispatched">Liberados</MenuItem>
                     <MenuItem value="all">Todos</MenuItem>
                 </TextField>
@@ -83,7 +84,9 @@ const ListOrders = () => {
                                     {getFormattedDate(order.due_date)}
                                 </TableCell>
                                 <TableCell>
-                                    {order.dispatched === 'created' ? "A liberar" : "Liberado"}
+                                    {order.dispatched === 'created' ? 'A liberar' : null}
+                                    {order.dispatched === 'processing' ? 'Em processamento' : null}
+                                    {order.dispatched === 'dispatched' ? 'Liberado' : null}
                                 </TableCell>
                                 <TableCell>
                                     <Button

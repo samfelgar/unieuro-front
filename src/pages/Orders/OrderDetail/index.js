@@ -12,6 +12,7 @@ import api from '../../../services/api'
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import {getFormattedDate} from "../../../utils/formatDate";
+import SnackAlert from "../../../components/SnackAlert";
 
 const OrderDetail = () => {
     const initialOrder = {
@@ -36,6 +37,10 @@ const OrderDetail = () => {
     const {id} = useParams()
     const history = useHistory()
 
+    const [openSnack, setOpenSnack] = useState(false);
+    const [severity, setSeverity] = useState('success');
+    const [snackMessage, setSnackMessage] = useState('');
+
     useEffect(() => {
         api.get(`/roles/${currentRoleId}`)
             .then(response => {
@@ -57,16 +62,46 @@ const OrderDetail = () => {
 
     const dispatchButton = () => {
         return (
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 10}}>
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={() => history.push(`/orders/${order.id}/items/lots`)}
+            >
+                Liberar pedido
+            </Button>
+        )
+    }
+
+    const handleProcessingButtonClick = () => {
+        api.put(`/orders/processing/${order.id}`)
+            .then(response => {
+                setSnackMessage('Operação concluída com sucesso!')
+                setSeverity('success')
+                setOpenSnack(true)
+            })
+            .catch(error => {
+                setSnackMessage(error.response.data.message)
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+    }
+
+    const processingButton = () => {
+        return (
+            <div style={{ marginLeft: 10 }}>
                 <Button
                     variant="contained"
                     color="primary"
-                    onClick={() => history.push(`/orders/${order.id}/items/lots`)}
+                    onClick={handleProcessingButtonClick}
                 >
-                    Liberar pedido
+                    Marcar como "em processamento"
                 </Button>
             </div>
         )
+    }
+
+    const handleCloseSnackBar = () => {
+        setOpenSnack(false);
     }
 
     return (
@@ -80,7 +115,10 @@ const OrderDetail = () => {
             <Typography><strong>Curso:</strong> {order.course.description}</Typography>
             <Typography><strong>Laboratório:</strong> {order.lab.description}</Typography>
             <Typography><strong>Liberada:</strong> {order.dispatched !== 'created' ? 'Sim' : 'Não'}</Typography>
-            {grant && order.dispatched === 'created' ? dispatchButton() : null}
+            <div style={{display: 'flex', justifyContent: 'flex-end', marginBottom: 10}}>
+                {grant && order.dispatched === 'created' ? dispatchButton() : null}
+                {grant && order.dispatched === 'created' ? processingButton() : null}
+            </div>
             <div>
                 <TableContainer component={Paper}>
                     <Table>
@@ -106,6 +144,12 @@ const OrderDetail = () => {
                 </TableContainer>
             </div>
             <Button onClick={() => history.goBack()} variant="contained" style={{marginTop: 10}}>Voltar</Button>
+            <SnackAlert
+                openSnack={openSnack}
+                onClose={handleCloseSnackBar}
+                severity={severity}
+                snackMessage={snackMessage}
+            />
         </Container>
     )
 
