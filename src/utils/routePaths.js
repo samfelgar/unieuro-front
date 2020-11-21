@@ -28,6 +28,9 @@ import EditLab from "../pages/Labs/EditLab";
 import ListCourses from "../pages/Courses/ListCourses";
 import NewCourse from "../pages/Courses/NewCourse";
 import EditCourse from "../pages/Courses/EditCourse";
+import NewClass from "../pages/Classes/NewClass";
+import ListClasses from "../pages/Classes/ListClasses";
+import EditClass from "../pages/Classes/EditClass";
 
 export const paths = [
     {path: '/', exact: true, component: <Home />},
@@ -60,4 +63,7 @@ export const paths = [
     {path: '/courses/edit/:courseId', exact: false, component: <EditCourse />},
     {path: '/courses/new', exact: false, component: <NewCourse />},
     {path: '/courses', exact: false, component: <ListCourses />},
+    {path: '/classes/edit/:classId', exact: false, component: <EditClass />},
+    {path: '/classes/new', exact: false, component: <NewClass />},
+    {path: '/classes', exact: false, component: <ListClasses />},
 ]

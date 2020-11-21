@@ -26,11 +26,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Classes/EditClass/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Classes/EditClass/styles.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Classes/ListClasses/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Classes/NewClass/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Classes/NewClass/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/ListOrders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/MyOrders/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/routePaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/routePaths.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/Classes" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -79,19 +81,20 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Lots/ListLots" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/Classes" />
       <recent name="$PROJECT_DIR$/src/pages/Courses/EditCourse" />
       <recent name="$PROJECT_DIR$/src/pages/Courses/NewCourse" />
       <recent name="$PROJECT_DIR$/src/pages/Labs/EditLab" />
       <recent name="$PROJECT_DIR$/src/pages/Lots/EditLot" />
-      <recent name="$PROJECT_DIR$/src/pages/Users/EditUser" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/pages/Lots/ListLots" />
-      <recent name="$PROJECT_DIR$/src/pages" />
     </key>
   </component>
   <component name="RunManager">
@@ -144,7 +147,9 @@
       <workItem from="1596141235681" duration="16082000" />
       <workItem from="1596246863529" duration="8583000" />
       <workItem from="1596296297803" duration="3471000" />
-      <workItem from="1605417620549" duration="3358000" />
+      <workItem from="1605417620549" duration="3554000" />
+      <workItem from="1605567999794" duration="1844000" />
+      <workItem from="1605974463054" duration="5943000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -209,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596152185346</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Processing order feature">
+      <created>1605421537163</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605421537163</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,12 +271,33 @@
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Bug fixes and permissions management" />
     <MESSAGE value="bug fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
+    <MESSAGE value="Processing order feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Processing order feature" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605420605274">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1605974847711">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605420605274" />
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1605974847711">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1605974847711">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1605974847711">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
+    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605421540518">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605421540518" />
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605975048787">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605975048787" />
   </component>
 </project>
