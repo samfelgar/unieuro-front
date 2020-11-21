@@ -26,13 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
-      <change afterPath="$PROJECT_DIR$/src/pages/Subjects/EditSubject/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Subjects/EditSubject/styles.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Subjects/ListSubjects/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Subjects/NewSubject/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/Subjects/NewSubject/styles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/routePaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/routePaths.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,7 @@
       <workItem from="1596296297803" duration="3471000" />
       <workItem from="1605417620549" duration="3554000" />
       <workItem from="1605567999794" duration="1844000" />
-      <workItem from="1605974463054" duration="8483000" />
+      <workItem from="1605974463054" duration="12240000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -228,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605981756767</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Crud subjects">
+      <created>1605984413533</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605984413533</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +283,8 @@
     <MESSAGE value="bug fixes" />
     <MESSAGE value="Processing order feature" />
     <MESSAGE value="Crud classroom" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud classroom" />
+    <MESSAGE value="Crud subjects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud subjects" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1605974847711">
@@ -299,10 +303,10 @@
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
-    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605981763360">
+    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605984452294">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605981763360" />
+    <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605984452294" />
     <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605975048787">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>

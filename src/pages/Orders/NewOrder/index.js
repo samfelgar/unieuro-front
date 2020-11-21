@@ -49,10 +49,18 @@ const useStyles = makeStyles((theme) => ({
 const SelectQuantities = ({selectedItems, calculateQtd}) => {
 
     const [items, setItems] = useState([]);
+
     const [labs, setLabs] = useState([])
-    const [courses, setCourses] = useState([])
     const [selectedLab, setSelectedLab] = useState('')
+
+    const [courses, setCourses] = useState([])
+    const [classesObj, setClassesObj] = useState([]);
+    const [subjects, setSubjects] = useState([])
+
     const [selectedCourse, setSelectedCourse] = useState('')
+    const [selectedClass, setSelectedClass] = useState('')
+    const [selectedSubject, setSelectedSubject] = useState('')
+
     const [dueDate, setDueDate] = useState(new Date());
     const [dueTime, setDueTime] = useState('')
 
@@ -75,6 +83,7 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                 setSeverity('error')
                 setOpenSnack(true)
             })
+
         api.get('/courses')
             .then(response => {
                 setCourses(response.data)
@@ -85,6 +94,34 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                 setOpenSnack(true)
             })
     }, [])
+
+    const handleChangeCourse = (event) => {
+        const newCourse = event.target.value;
+        setSelectedCourse(newCourse);
+        api.get(`/courses/${newCourse}/classes`)
+            .then(response => {
+                setClassesObj(response.data);
+            })
+            .catch(error => {
+                setSnackMessage('Nao foi possivel carregar as turmas.')
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+    }
+
+    const handleChangeClasses = (event) => {
+        const newClass = event.target.value;
+        setSelectedClass(newClass);
+        api.get(`/classes/${newClass}/subjects`)
+            .then(response => {
+                setSubjects(response.data);
+            })
+            .catch(error => {
+                setSnackMessage('Nao foi possivel carregar as disciplinas.')
+                setSeverity('error')
+                setOpenSnack(true)
+            })
+    }
 
     const handleChangeQuantity = (changedItem) => {
         let newItems = items
@@ -110,6 +147,7 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                 'due_time': dueTime,
                 'lab_id': selectedLab,
                 'course_id': selectedCourse,
+                'subject_id': selectedSubject,
                 items
             }
 
@@ -121,6 +159,12 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
 
             if (!data.course_id) {
                 setDialogMessage('Selecione um curso.')
+                setOpenDialog(true)
+                return
+            }
+
+            if (!data.subject_id) {
+                setDialogMessage('Selecione uma disciplina.')
                 setOpenDialog(true)
                 return
             }
@@ -208,12 +252,34 @@ const SelectQuantities = ({selectedItems, calculateQtd}) => {
                     <TextField
                         label="Curso"
                         value={selectedCourse}
-                        onChange={event => setSelectedCourse(event.target.value)}
+                        onChange={handleChangeCourse}
                         select
                         className={[classes.inputField, classes.selectFields].join(' ')}
                     >
                         {courses.map(course => (
                             <MenuItem key={course.id} value={course.id}>{course.description}</MenuItem>
+                        ))}
+                    </TextField>
+                    <TextField
+                        label="Turma"
+                        value={selectedClass}
+                        onChange={handleChangeClasses}
+                        select
+                        className={[classes.inputField, classes.selectFields].join(' ')}
+                    >
+                        {classesObj.map(classObj => (
+                            <MenuItem key={classObj.id} value={classObj.id}>{classObj.description}</MenuItem>
+                        ))}
+                    </TextField>
+                    <TextField
+                        label="Disciplina"
+                        value={selectedSubject}
+                        onChange={event => setSelectedSubject(event.target.value)}
+                        select
+                        className={[classes.inputField, classes.selectFields].join(' ')}
+                    >
+                        {subjects.map(subject => (
+                            <MenuItem key={subject.id} value={subject.id}>{subject.description}</MenuItem>
                         ))}
                     </TextField>
                 </Box>

@@ -29,6 +29,12 @@ const OrderDetail = () => {
         course: {
             description: ''
         },
+        subject: {
+            description: '',
+            classroom: {
+                description: ''
+            }
+        },
         items: []
     }
     const [order, setOrder] = useState(initialOrder)
@@ -113,6 +119,8 @@ const OrderDetail = () => {
             </Typography>
             <Typography><strong>Hora de entrega:</strong> {order.due_time}</Typography>
             <Typography><strong>Curso:</strong> {order.course.description}</Typography>
+            <Typography><strong>Turma:</strong> {order.subject.classroom.description}</Typography>
+            <Typography><strong>Disciplina:</strong> {order.subject.description}</Typography>
             <Typography><strong>Laboratório:</strong> {order.lab.description}</Typography>
             <Typography><strong>Liberada:</strong> {order.dispatched !== 'created' ? 'Sim' : 'Não'}</Typography>
             <div style={{display: 'flex', justifyContent: 'flex-end', marginBottom: 10}}>
