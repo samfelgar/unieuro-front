@@ -26,9 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d6274979-9320-41e9-be2e-1a74b2d5a173" name="Default Changelist" comment="changes to comply with database">
+      <change afterPath="$PROJECT_DIR$/src/pages/Reports/ClassroomItems/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/Reports/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/NewOrder/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Orders/OrderDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/routePaths.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/routePaths.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +148,8 @@
       <workItem from="1596296297803" duration="3471000" />
       <workItem from="1605417620549" duration="3554000" />
       <workItem from="1605567999794" duration="1844000" />
-      <workItem from="1605974463054" duration="12240000" />
+      <workItem from="1605974463054" duration="13556000" />
+      <workItem from="1606090752014" duration="10721000" />
     </task>
     <task id="LOCAL-00001" summary="changes to comply with database">
       <created>1595203956515</created>
@@ -231,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605984413533</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Adding classes and subjects to order.">
+      <created>1605996321137</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605996321137</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,32 +295,37 @@
     <MESSAGE value="Processing order feature" />
     <MESSAGE value="Crud classroom" />
     <MESSAGE value="Crud subjects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud subjects" />
+    <MESSAGE value="Adding classes and subjects to order." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding classes and subjects to order." />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1605974847711">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1606106559866">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
-    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1605974847711">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606106559866" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1606106559866">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
-    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1605974847711">
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606106559866" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1606106559866">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
-    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1605974847711">
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606106559866" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1606106559866">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605974847711" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606106559866" />
     <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605984452294">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
     <state x="555" y="267" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605984452294" />
-    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605975048787">
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606099016244">
       <screen x="0" y="27" width="1920" height="1009" />
     </state>
-    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1605975048787" />
+    <state x="741" y="446" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606099016244" />
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1606095494509">
+      <screen x="0" y="27" width="1920" height="1009" />
+    </state>
+    <state x="623" y="248" width="672" height="678" key="search.everywhere.popup/0.27.1920.1009/1920.179.1366.768@0.27.1920.1009" timestamp="1606095494509" />
   </component>
 </project>

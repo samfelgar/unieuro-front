@@ -34,6 +34,8 @@ import EditClass from "../pages/Classes/EditClass";
 import EditSubject from "../pages/Subjects/EditSubject";
 import NewSubject from "../pages/Subjects/NewSubject";
 import ListSubjects from "../pages/Subjects/ListSubjects";
+import Reports from "../pages/Reports";
+import ClassroomItems from "../pages/Reports/ClassroomItems";
 
 export const paths = [
     {path: '/', exact: true, component: <Home />},
@@ -72,4 +74,6 @@ export const paths = [
     {path: '/subjects/edit/:subjectId', exact: false, component: <EditSubject />},
     {path: '/subjects/new', exact: false, component: <NewSubject />},
     {path: '/subjects', exact: false, component: <ListSubjects />},
+    {path: '/reports/classroom-items', exact: false, component: <ClassroomItems />},
+    {path: '/reports', exact: false, component: <Reports />},
 ]
